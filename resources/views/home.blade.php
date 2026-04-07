@@ -85,7 +85,7 @@
                     "@context": "https://schema.org", 
                     "@type": "WebSite", 
                     "name": "Arrithnius Solutions", 
-                    "url": https://arrithnius.co.za, 
+                    "url": "https://arrithnius.co.za", 
                     "description": "Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.", 
                     "potentialAction": 
                     { 
