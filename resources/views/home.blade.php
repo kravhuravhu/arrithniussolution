@@ -30,7 +30,7 @@
         <meta property="og:url" content="{{ url('/') }}">
         <meta property="og:site_name" content="{{ env('COMPANY_NAME') }}">
         <meta property="og:locale" content="en_ZA">
-        <meta property="og:image" content="{{ secure_asset('images/og-image.jpg') }}">
+        <meta property="og:image" content="{{ secure_asset('images/original_logo_bg.png') }}">
         <meta property="og:image:alt" content="{{ env('COMPANY_NAME') }} - Digital Solutions Provider">
         
         <!-- Twitter Card Meta Tags -->
@@ -50,47 +50,49 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}">
-        <link rel="stylesheet" href="{{ secure_asset('components/navbar.css') }}">
-        <link rel="stylesheet" href="{{ secure_asset('components/footer.css') }}">
-        <link rel="stylesheet" href="{{ secure_asset('css/services-expanded.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ secure_asset('components/navbar.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ secure_asset('components/footer.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ secure_asset('css/services-expanded.css') }}" type="text/css">
         
         <!-- Structured Data / Schema.org -->
         @verbatim
-            <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "Organization",
-                    "name": "{{ env('COMPANY_NAME') }}",
-                    "url": "{{ env('APP_URL') }}",
-                    "logo": "https://arrithnius.co.za/images/original_logo_bg.png",
-                    "description": "{{ env('SITE_DESCRIPTION') }}",
-                    "email": "{{ env('COMPANY_EMAIL') }}",
-                    "telephone": "{{ env('COMPANY_PHONE') }}",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressLocality": "Gauteng",
-                        "addressCountry": "ZA"
-                    },
+            <script type="application/ld+json"> 
+                { 
+                    "@context": "https://schema.org", 
+                    "@type": "Organization", 
+                    "name": "Arrithnius Solutions", 
+                    "url": "https://arrithnius.co.za", 
+                    "logo": "https://arrithnius.co.za/images/original_logo_bg.png", 
+                    "description": "Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.", 
+                    "email": "info@arrithnius.co.za", 
+                    "telephone": "0677343682", 
+                    "address": { 
+                        "@type": "PostalAddress", 
+                        "addressLocality": "Gauteng", 
+                        "addressCountry": "ZA" 
+                    }, 
                     "sameAs": [
-                        "{{ env('WHATSAPP_URL') }}",
-                        "{{ env('LINKEDIN_URL') }}"
-                    ]
-                }
-            </script>
-            
-            <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "WebSite",
-                    "name": "{{ env('COMPANY_NAME') }}",
-                    "url": "{{ env('APP_URL') }}",
-                    "description": "{{ env('SITE_DESCRIPTION') }}",
-                    "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": "https://arrithnius.co.za/?s={search_term_string}",
-                        "query-input": "required name=search_term_string"
-                    }
+                        "https://wa.me/27677343682", 
+                        "https://linkedin.com/company/arrithnius-solutions", 
+                        "https://github.com/kravhuravhu" 
+                    ] 
+                } 
+            </script> 
+                
+            <script type="application/ld+json"> 
+                { 
+                    "@context": "https://schema.org", 
+                    "@type": "WebSite", 
+                    "name": "Arrithnius Solutions", 
+                    "url": https://arrithnius.co.za, 
+                    "description": "Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.", 
+                    "potentialAction": 
+                    { 
+                        "@type": "SearchAction", 
+                        "target": "https://arrithnius.co.za/?s=@{{search_term_string}}", 
+                        "query-input": "required name=search_term_string" 
+                    } 
                 }
             </script>
 
