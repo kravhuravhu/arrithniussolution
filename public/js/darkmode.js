@@ -6,6 +6,7 @@
         localStorage.setItem('theme', theme);
         updateIcon(theme);
         updateLogo(theme);
+        updateFooterLogo(theme);
         updateButtonIcon(theme);
         
         window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
@@ -35,6 +36,17 @@
         }
         
         logo.style.display = 'block';
+    };
+    
+    const updateFooterLogo = (theme) => {
+        const footerLogo = document.getElementById('footerLogo');
+        if (!footerLogo) return;
+        
+        if (theme === 'light') {
+            footerLogo.src = '/images/original_logo_bg.png';
+        } else {
+            footerLogo.src = '/images/original_logo_lt.png';
+        }
     };
     
     const cycleTheme = () => {

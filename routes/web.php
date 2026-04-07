@@ -1,28 +1,36 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['activeSection' => 'home']);
 })->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
 Route::get('/services', function () {
-    return view('services');
+    return view('home', ['activeSection' => 'all-services']);
 })->name('services');
 
-Route::get('/pricing', function () {
-    return view('pricing');
-})->name('pricing');
+Route::get('/design', function () {
+    return view('home', ['activeSection' => 'design-services']);
+})->name('design');
+
+Route::get('/packages', function () {
+    return view('home', ['activeSection' => 'packages']);
+})->name('packages');
+
+Route::get('/why-us', function () {
+    return view('home', ['activeSection' => 'why-choose-us']);
+})->name('why-us');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('home', ['activeSection' => 'contact']);
 })->name('contact');
 
 Route::get('/privacy', function () {
     return view('privacy');
 })->name('privacy');
+
+// Form submission routes
+Route::post('/contact/send', [ContactController::class, 'sendContact'])->name('contact.send');
+Route::post('/quote/request', [ContactController::class, 'requestQuote'])->name('quote.request');
