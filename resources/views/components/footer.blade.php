@@ -55,6 +55,16 @@
         <div class="footer-bottom">
             <p>&copy; {{ date('Y') }} Arrithnius Solution. All Rights Reserved. | Mobile • Web • Cloud • Storage</p>
         </div>
+
+        <!-- for seo -->
+        <div class="seo-links" style="display: none;">
+            <a href="https://www.arrithnius.co.za/">Home</a>
+            <a href="https://www.arrithnius.co.za/services">Services</a>
+            <a href="https://www.arrithnius.co.za/design">Design</a>
+            <a href="https://www.arrithnius.co.za/packages">Packages</a>
+            <a href="https://www.arrithnius.co.za/why-us">Why Us</a>
+            <a href="https://www.arrithnius.co.za/contact">Contact</a>
+        </div>
     </div>
 </footer>
 
