@@ -61,6 +61,9 @@
         <link rel="preconnect" href="https://cdn.cloudflare.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
         <!-- Dynamic SEO Tags -->
         <title>{{ $currentSEO['title'] }}</title>
         <meta name="description" content="{{ $currentSEO['description'] }}">
@@ -204,7 +207,7 @@
             <section id="home" class="hero">
                 <div class="container">
                     <div class="hero-content fall-reveal">
-                        <div class="hero-badge">Full-Stack Digital Solutions Agency</div>
+                        <div class="hero-badge"><i class="fas fa-code"></i> Full-Stack Digital Solutions Agency</div>
                         <h1>High-Performance<br><span class="gradient-text">Digital Platforms</span><br>That Scale With You</h1>
                         <div class="typing-container">
                             <span class="typing-text" id="typing-text"></span>
@@ -214,8 +217,8 @@
                             Right from Laravel websites and Flutter mobile apps to enterprise VM hosting and secure cloud storage — we build complete digital ecosystems that scale with your business.
                         </p>
                         <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary btn-large">Start Your Project →</a>
-                            <a href="#all-services" class="btn btn-outline btn-large">Explore All Services</a>
+                            <a href="#contact" class="btn btn-primary btn-large">Start Your Project <i class="fas fa-arrow-right"></i></a>
+                            <a href="#all-services" class="btn btn-outline btn-large">Explore All Services <i class="fas fa-search"></i></a>
                         </div>
                         <div class="hero-stats">
                             <div class="stat"><div class="number gradient-text">100+</div><div class="label">Projects Delivered</div></div>
@@ -250,58 +253,58 @@
                     </div>
                     
                     <div class="service-categories-tabs reveal">
-                        <button class="service-cat-btn active" data-cat="web">🌐 Web Development</button>
-                        <button class="service-cat-btn" data-cat="mobile">📱 Mobile Apps</button>
-                        <button class="service-cat-btn" data-cat="cloud">☁️ Cloud & VM</button>
-                        <button class="service-cat-btn" data-cat="database">🗄️ Database Solutions</button>
-                        <button class="service-cat-btn" data-cat="storage">💾 Cloud Storage</button>
-                        <button class="service-cat-btn" data-cat="devops">⚙️ DevOps & Version Control</button>
+                        <button class="service-cat-btn active" data-cat="web"><i class="fas fa-globe"></i> Web Development</button>
+                        <button class="service-cat-btn" data-cat="mobile"><i class="fas fa-mobile-alt"></i> Mobile Apps</button>
+                        <button class="service-cat-btn" data-cat="cloud"><i class="fas fa-cloud"></i> Cloud & VM</button>
+                        <button class="service-cat-btn" data-cat="database"><i class="fas fa-database"></i> Database Solutions</button>
+                        <button class="service-cat-btn" data-cat="storage"><i class="fas fa-hdd"></i> Cloud Storage</button>
+                        <button class="service-cat-btn" data-cat="devops"><i class="fas fa-cogs"></i> DevOps & Version Control</button>
                     </div>
                     
                     <div class="service-category-pane active" id="cat-web">
                         <div class="services-grid">
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🌐</div><h3>Custom Laravel Websites</h3><p>Bespoke web applications built with Laravel PHP framework. Scalable, secure, and optimized for performance.</p><ul class="service-features-list"><li>✓ Custom Business Websites</li><li>✓ E-commerce Platforms</li><li>✓ Web Portals & Dashboards</li><li>✓ RESTful API Development</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">⚡</div><h3>Performance Optimization</h3><p>Lightning-fast loading speeds with advanced caching, CDN integration, and database tuning.</p><ul class="service-features-list"><li>✓ Redis/Memcached Caching</li><li>✓ Database Query Optimization</li><li>✓ Image & Asset Optimization</li><li>✓ Lighthouse 90+ Scores</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🔧</div><h3>Maintenance & Support</h3><p>Ongoing website maintenance, security updates, and 24/7 technical support.</p><ul class="service-features-list"><li>✓ Security Patches & Updates</li><li>✓ Bug Fixes & Improvements</li><li>✓ Performance Monitoring</li><li>✓ Priority Support Channel</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-globe"></i></div><h3>Custom Laravel Websites</h3><p>Bespoke web applications built with Laravel PHP framework. Scalable, secure, and optimized for performance.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Custom Business Websites</li><li><i class="fas fa-check-circle"></i> E-commerce Platforms</li><li><i class="fas fa-check-circle"></i> Web Portals & Dashboards</li><li><i class="fas fa-check-circle"></i> RESTful API Development</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Performance Optimization</h3><p>Lightning-fast loading speeds with advanced caching, CDN integration, and database tuning.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Redis/Memcached Caching</li><li><i class="fas fa-check-circle"></i> Database Query Optimization</li><li><i class="fas fa-check-circle"></i> Image & Asset Optimization</li><li><i class="fas fa-check-circle"></i> Best Professional SEO Rank</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-wrench"></i></div><h3>Maintenance & Support</h3><p>Ongoing website maintenance, security updates, and 24/7 technical support.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Security Patches & Updates</li><li><i class="fas fa-check-circle"></i> Bug Fixes & Improvements</li><li><i class="fas fa-check-circle"></i> Performance Monitoring</li><li><i class="fas fa-check-circle"></i> Priority Support Channel</li></ul></div>
                         </div>
                     </div>
                     
                     <div class="service-category-pane" id="cat-mobile">
                         <div class="services-grid">
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">📱</div><h3>Flutter Mobile Apps</h3><p>Cross-platform mobile applications built with Flutter & Dart. One codebase for iOS & Android.</p><ul class="service-features-list"><li>✓ iOS & Android Apps</li><li>✓ Custom UI/UX Design</li><li>✓ Smooth Animations</li><li>✓ App Store & Play Store Deployment</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🔌</div><h3>API Integration</h3><p>Seamless integration with REST APIs, Firebase, and third-party services.</p><ul class="service-features-list"><li>✓ REST API Integration</li><li>✓ Firebase Backend</li><li>✓ Payment Gateways</li><li>✓ Social Media Login</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">📲</div><h3>App Maintenance</h3><p>Ongoing app updates, bug fixes, and feature enhancements.</p><ul class="service-features-list"><li>✓ Regular Updates</li><li>✓ Performance Optimization</li><li>✓ Crash Analytics & Fixes</li><li>✓ Version Migration Support</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><h3>Flutter Mobile Apps</h3><p>Cross-platform mobile applications built with Flutter & Dart. One codebase for iOS & Android.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> iOS & Android Apps</li><li><i class="fas fa-check-circle"></i> Custom UI/UX Design</li><li><i class="fas fa-check-circle"></i> Smooth Animations</li><li><i class="fas fa-check-circle"></i> App Store & Play Store Deployment</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-plug"></i></div><h3>API Integration</h3><p>Seamless integration with REST APIs, Firebase, and third-party services.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> REST API Integration</li><li><i class="fas fa-check-circle"></i> Firebase Backend</li><li><i class="fas fa-check-circle"></i> Payment Gateways</li><li><i class="fas fa-check-circle"></i> Social Media Login</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-sync-alt"></i></div><h3>App Maintenance</h3><p>Ongoing app updates, bug fixes, and feature enhancements.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Regular Updates</li><li><i class="fas fa-check-circle"></i> Performance Optimization</li><li><i class="fas fa-check-circle"></i> Crash Analytics & Fixes</li><li><i class="fas fa-check-circle"></i> Version Migration Support</li></ul></div>
                         </div>
                     </div>
                     
                     <div class="service-category-pane" id="cat-cloud">
                         <div class="services-grid">
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🖥️</div><h3>Remote VM Hosting</h3><p>Enterprise-grade virtual machines with full root access via SSH. Choose your Linux distro.</p><ul class="service-features-list"><li>✓ Ubuntu / Debian / CentOS</li><li>✓ Full SSH Root Access</li><li>✓ Apache / Nginx Servers</li><li>✓ 99.9% Uptime Guarantee</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🔐</div><h3>Managed Server Setup</h3><p>Complete server configuration, security hardening, and ongoing management.</p><ul class="service-features-list"><li>✓ Firewall Configuration</li><li>✓ SSL Certificate Installation</li><li>✓ Automated Backups</li><li>✓ 24/7 Server Monitoring</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🚀</div><h3>Application Deployment</h3><p>Deploy your web applications to production environments with CI/CD pipelines.</p><ul class="service-features-list"><li>✓ Laravel/Node.js Deployment</li><li>✓ Docker Containerization</li><li>✓ Load Balancing</li><li>✓ Auto-scaling Configuration</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-desktop"></i></div><h3>Remote VM Hosting</h3><p>Enterprise-grade virtual machines with full root access via SSH. Choose your Linux distro.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Ubuntu / Debian / CentOS</li><li><i class="fas fa-check-circle"></i> Full SSH Root Access</li><li><i class="fas fa-check-circle"></i> Apache / Nginx Servers</li><li><i class="fas fa-check-circle"></i> 99.9% Uptime Guarantee</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-lock"></i></div><h3>Managed Server Setup</h3><p>Complete server configuration, security hardening, and ongoing management.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Firewall Configuration</li><li><i class="fas fa-check-circle"></i> SSL Certificate Installation</li><li><i class="fas fa-check-circle"></i> Automated Backups</li><li><i class="fas fa-check-circle"></i> 24/7 Server Monitoring</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-rocket"></i></div><h3>Application Deployment</h3><p>Deploy your web applications to production environments with CI/CD pipelines.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Laravel/Node.js Deployment</li><li><i class="fas fa-check-circle"></i> Docker Containerization</li><li><i class="fas fa-check-circle"></i> Load Balancing</li><li><i class="fas fa-check-circle"></i> Auto-scaling Configuration</li></ul></div>
                         </div>
                     </div>
                     
                     <div class="service-category-pane" id="cat-database">
                         <div class="services-grid">
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🗄️</div><h3>Stand-alone Database Apps</h3><p>Custom database applications for data management, reporting, and analytics.</p><ul class="service-features-list"><li>✓ MySQL / PostgreSQL</li><li>✓ MongoDB / NoSQL</li><li>✓ Custom Admin Panels</li><li>✓ Data Import/Export Tools</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🔄</div><h3>Database Management</h3><p>Ongoing database optimization, backup, and maintenance.</p><ul class="service-features-list"><li>✓ Performance Tuning</li><li>✓ Automated Backups</li><li>✓ Security Hardening</li><li>✓ Query Optimization</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-database"></i></div><h3>Stand-alone Database Apps</h3><p>Custom database applications for data management, reporting, and analytics.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> MySQL / PostgreSQL</li><li><i class="fas fa-check-circle"></i> MongoDB / NoSQL</li><li><i class="fas fa-check-circle"></i> Custom Admin Panels</li><li><i class="fas fa-check-circle"></i> Data Import/Export Tools</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Database Management</h3><p>Ongoing database optimization, backup, and maintenance.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Performance Tuning</li><li><i class="fas fa-check-circle"></i> Automated Backups</li><li><i class="fas fa-check-circle"></i> Security Hardening</li><li><i class="fas fa-check-circle"></i> Query Optimization</li></ul></div>
                         </div>
                     </div>
                     
                     <div class="service-category-pane" id="cat-storage">
                         <div class="services-grid">
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">☁️</div><h3>Secure Cloud Storage</h3><p>Enterprise-grade storage for images, videos, documents, and backups.</p><ul class="service-features-list"><li>✓ Object Storage (S3-compatible)</li><li>✓ CDN Integration</li><li>✓ File Versioning</li><li>✓ Encrypted at Rest</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">📁</div><h3>Media Management</h3><p>Organized storage and delivery for all your media assets.</p><ul class="service-features-list"><li>✓ Image Optimization</li><li>✓ Video Streaming Ready</li><li>✓ Automatic Compression</li><li>✓ Custom Access Controls</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">💾</div><h3>Backup Solutions</h3><p>Automated backup systems for databases, files, and entire servers.</p><ul class="service-features-list"><li>✓ Daily Automated Backups</li><li>✓ Off-site Storage</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div><h3>Secure Cloud Storage</h3><p>Enterprise-grade storage for images, videos, documents, and backups.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Object Storage (S3-compatible)</li><li><i class="fas fa-check-circle"></i> CDN Integration</li><li><i class="fas fa-check-circle"></i> File Versioning</li><li><i class="fas fa-check-circle"></i> Encrypted at Rest</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-images"></i></div><h3>Media Management</h3><p>Organized storage and delivery for all your media assets.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Image Optimization</li><li><i class="fas fa-check-circle"></i> Video Streaming Ready</li><li><i class="fas fa-check-circle"></i> Automatic Compression</li><li><i class="fas fa-check-circle"></i> Custom Access Controls</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-archive"></i></div><h3>Backup Solutions</h3><p>Automated backup systems for databases, files, and entire servers.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Daily Automated Backups</li><li><i class="fas fa-check-circle"></i> Off-site Storage</li></ul></div>
                         </div>
                     </div>
                     
                     <div class="service-category-pane" id="cat-devops">
                         <div class="services-grid">
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><svg height="40" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div><h3>GitHub Version Control</h3><p>Professional Git workflow setup, repository management, and collaboration tools.</p><ul class="service-features-list"><li>✓ Repository Setup & Management</li><li>✓ Branch Strategy Implementation</li><li>✓ Code Review Processes</li><li>✓ GitHub Actions CI/CD</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">🔄</div><h3>CI/CD Pipelines</h3><p>Automated testing and deployment pipelines for faster releases.</p><ul class="service-features-list"><li>✓ Automated Testing</li><li>✓ Staging Environments</li><li>✓ Zero-downtime Deployments</li><li>✓ Rollback Capabilities</li></ul></div>
-                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon">📦</div><h3>Docker & Containerization</h3><p>Containerize your applications for consistent deployment across environments.</p><ul class="service-features-list"><li>✓ Dockerfile Creation</li><li>✓ Docker Compose Setup</li><li>✓ Container Orchestration</li><li>✓ Registry Management</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fab fa-github"></i></div><h3>GitHub Version Control</h3><p>Professional Git workflow setup, repository management, and collaboration tools.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Repository Setup & Management</li><li><i class="fas fa-check-circle"></i> Branch Strategy Implementation</li><li><i class="fas fa-check-circle"></i> Code Review Processes</li><li><i class="fas fa-check-circle"></i> GitHub Actions CI/CD</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fas fa-code-branch"></i></div><h3>CI/CD Pipelines</h3><p>Automated testing and deployment pipelines for faster releases.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Automated Testing</li><li><i class="fas fa-check-circle"></i> Staging Environments</li><li><i class="fas fa-check-circle"></i> Zero-downtime Deployments</li><li><i class="fas fa-check-circle"></i> Rollback Capabilities</li></ul></div>
+                            <div class="service-card reveal"><div class="shiny-overlay"></div><div class="service-icon"><i class="fab fa-docker"></i></div><h3>Docker & Containerization</h3><p>Containerize your applications for consistent deployment across environments.</p><ul class="service-features-list"><li><i class="fas fa-check-circle"></i> Dockerfile Creation</li><li><i class="fas fa-check-circle"></i> Docker Compose Setup</li><li><i class="fas fa-check-circle"></i> Container Orchestration</li><li><i class="fas fa-check-circle"></i> Registry Management</li></ul></div>
                         </div>
                     </div>
                 </div>
@@ -315,14 +318,14 @@
                         <p>Complete branding and creative solutions for your business</p>
                     </div>
                     <div class="design-grid">
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>🎨 Logo Design</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>🃏 Business Cards</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>📄 Company Profiles</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>📊 Presentations</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>📖 Brochures</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>📝 Resume/CV</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>📱 Social Media Graphics</div>
-                        <div class="design-item reveal"><div class="shiny-overlay"></div>🖼️ Posters & Flyers</div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-paint-brush"></i><span>Logo Design</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-id-card"></i><span>Business Cards</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-building"></i><span>Company Profiles</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-chalkboard"></i><span>Presentations</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-book"></i><span>Brochures</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-file-alt"></i><span>Resume/CV</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-hashtag"></i><span>Social Media Graphics</span></div>
+                        <div class="design-item reveal"><div class="shiny-overlay"></div><i class="fas fa-poster"></i><span>Posters & Flyers</span></div>
                     </div>
                 </div>
             </section>
@@ -335,10 +338,10 @@
                         <p>Choose the perfect package for your business needs</p>
                     </div>
                     <div class="packages-grid">
-                        <div class="package-card reveal"><div class="shiny-overlay"></div><div class="discount-badge">🎉 {{ env('FIRST_CLIENT_DISCOUNT') }}% OFF First Clients</div><h3>Web Development</h3><div class="price-note">One-time setup</div><ul class="package-features"><li>Custom Laravel Website (5-10 pages)</li><li>Fully Responsive Design</li><li>SEO Optimized</li><li>1 Month Free Maintenance</li></ul><a href="#contact" class="btn btn-primary">Get Quote →</a></div>
-                        <div class="package-card featured reveal"><div class="shiny-overlay"></div><div class="featured-badge">MOST POPULAR</div><h3>Flutter Mobile App</h3><div class="price-note">iOS + Android</div><ul class="package-features"><li>Cross-platform App (iOS/Android)</li><li>Custom UI/UX Design</li><li>API Integration Ready</li><li>App Store & Play Store Submission</li></ul><a href="#contact" class="btn btn-primary">Get Started →</a></div>
-                        <div class="package-card reveal"><div class="shiny-overlay"></div><h3>VM Hosting</h3><div class="price-note">SSH root access</div><ul class="package-features"><li>From 2 vCPU | 4GB RAM | 10GB</li><li>Full SSH Root Access</li><li>Choose Your Linux Distro</li><li>24/7 Server Monitoring</li></ul><a href="#contact" class="btn btn-outline">Get Quote →</a></div>
-                        <div class="package-card reveal"><div class="shiny-overlay"></div><h3>Cloud Storage</h3><div class="price-note">100GB - 1TB options</div><ul class="package-features"><li>Secure Object Storage</li><li>CDN Integration</li><li>File Versioning</li><li>API Access</li></ul><a href="#contact" class="btn btn-outline">Contact Us →</a></div>
+                        <div class="package-card reveal"><div class="shiny-overlay"></div><div class="discount-badge"><i class="fas fa-gift"></i> {{ env('FIRST_CLIENT_DISCOUNT') }}% OFF First Clients</div><h3>Web Development</h3><div class="price-note">One-time setup</div><ul class="package-features"><li><i class="fas fa-check-circle"></i> Custom Laravel Website (5-10 pages)</li><li><i class="fas fa-check-circle"></i> Fully Responsive Design</li><li><i class="fas fa-check-circle"></i> SEO Optimized</li><li><i class="fas fa-check-circle"></i> 1 Month Free Maintenance</li></ul><a href="#contact" class="btn btn-primary">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+                        <div class="package-card featured reveal"><div class="shiny-overlay"></div><div class="featured-badge"><i class="fas fa-fire"></i> MOST POPULAR</div><h3>Flutter Mobile App</h3><div class="price-note">iOS + Android</div><ul class="package-features"><li><i class="fas fa-check-circle"></i> Cross-platform App (iOS/Android)</li><li><i class="fas fa-check-circle"></i> Custom UI/UX Design</li><li><i class="fas fa-check-circle"></i> API Integration Ready</li><li><i class="fas fa-check-circle"></i> App Store & Play Store Submission</li></ul><a href="#contact" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a></div>
+                        <div class="package-card reveal"><div class="shiny-overlay"></div><h3>VM Hosting</h3><div class="price-note">SSH root access</div><ul class="package-features"><li><i class="fas fa-check-circle"></i> From 2 vCPU | 4GB RAM | 10GB</li><li><i class="fas fa-check-circle"></i> Full SSH Root Access</li><li><i class="fas fa-check-circle"></i> Choose Your Linux Distro</li><li><i class="fas fa-check-circle"></i> 24/7 Server Monitoring</li></ul><a href="#contact" class="btn btn-outline">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+                        <div class="package-card reveal"><div class="shiny-overlay"></div><h3>Cloud Storage</h3><div class="price-note">100GB - 1TB options</div><ul class="package-features"><li><i class="fas fa-check-circle"></i> Secure Object Storage</li><li><i class="fas fa-check-circle"></i> CDN Integration</li><li><i class="fas fa-check-circle"></i> File Versioning</li><li><i class="fas fa-check-circle"></i> API Access</li></ul><a href="#contact" class="btn btn-outline">Contact Us <i class="fas fa-envelope"></i></a></div>
                     </div>
                 </div>
             </section>
@@ -351,12 +354,12 @@
                         <p>What makes Arrithnius Solution different from the rest</p>
                     </div>
                     <div class="why-grid">
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon">✅</div><h4>100% Custom Built</h4><p>No templates or page builders. Every website and app is crafted specifically for your unique business needs.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon">📱</div><h4>Full-Stack Expertise</h4><p>From Laravel backends to Flutter mobile apps, we handle the entire technology stack.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon">🖥️</div><h4>SSH Root Access</h4><p>Full control over your VM with root access. Install any software, configure networks and access endpoints as needed.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon">💾</div><h4>Secure Cloud Storage</h4><p>Enterprise-grade storage with encryption, CDN, and automatic backup solutions.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><svg height="50" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div><h4>GitHub Integration</h4><p>Professional version control, CI/CD pipelines, and collaborative development workflows.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon">📍</div><h4>Remote, South African</h4><p>Based in South Africa. Remote & international support, and personalized service you can trust.</p></div>
+                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-check-circle"></i></div><h4>100% Custom Built</h4><p>No templates or page builders. Every website and app is crafted specifically for your unique business needs.</p></div>
+                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-layer-group"></i></div><h4>Full-Stack Expertise</h4><p>From Laravel backends to Flutter mobile apps, we handle the entire technology stack.</p></div>
+                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-terminal"></i></div><h4>SSH Root Access</h4><p>Full control over your VM with root access. Install any software, configure networks and access endpoints as needed.</p></div>
+                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>Secure Cloud Storage</h4><p>Enterprise-grade storage with encryption, CDN, and automatic backup solutions.</p></div>
+                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fab fa-github"></i></div><h4>GitHub Integration</h4><p>Professional version control, CI/CD pipelines, and collaborative development workflows.</p></div>
+                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-map-marker-alt"></i></div><h4>Remote, South African</h4><p>Based in South Africa. Remote & international support, and personalized service you can trust.</p></div>
                     </div>
                 </div>
             </section>
@@ -369,10 +372,10 @@
                         <p>Modern tools and frameworks for enterprise-grade solutions</p>
                     </div>
                     <div class="tech-showcase reveal">
-                        <div class="tech-category"><h4>Backend & Web</h4><div class="tech-badges"><span>Laravel</span><span>PHP</span><span>Node.js</span><span>MySQL</span><span>PostgreSQL</span><span>Redis</span></div></div>
-                        <div class="tech-category"><h4>Mobile Development</h4><div class="tech-badges"><span>Flutter</span><span>Dart</span><span>Firebase</span><span>REST APIs</span><span>GraphQL</span></div></div>
-                        <div class="tech-category"><h4>DevOps & Cloud</h4><div class="tech-badges"><span>Docker</span><span>GitHub Actions</span><span>CI/CD</span><span>Ubuntu</span><span>Nginx</span><span>Apache</span></div></div>
-                        <div class="tech-category"><h4>Storage & Databases</h4><div class="tech-badges"><span>S3 Storage</span><span>CDN</span><span>MongoDB</span><span>Backup Solutions</span></div></div>
+                        <div class="tech-category"><h4><i class="fas fa-server"></i> Backend & Web</h4><div class="tech-badges"><span>Laravel</span><span>PHP</span><span>Node.js</span><span>MySQL</span><span>PostgreSQL</span><span>Redis</span></div></div>
+                        <div class="tech-category"><h4><i class="fas fa-mobile-alt"></i> Mobile Development</h4><div class="tech-badges"><span>Flutter</span><span>Dart</span><span>Firebase</span><span>REST APIs</span><span>GraphQL</span></div></div>
+                        <div class="tech-category"><h4><i class="fas fa-cloud"></i> DevOps & Cloud</h4><div class="tech-badges"><span>Docker</span><span>GitHub Actions</span><span>CI/CD</span><span>Ubuntu</span><span>Nginx</span><span>Apache</span></div></div>
+                        <div class="tech-category"><h4><i class="fas fa-database"></i> Storage & Databases</h4><div class="tech-badges"><span>S3 Storage</span><span>CDN</span><span>MongoDB</span><span>Backup Solutions</span></div></div>
                     </div>
                 </div>
             </section>
@@ -387,8 +390,8 @@
                     
                     <div class="contact-tabs-container reveal">
                         <div class="contact-tabs-header">
-                            <button class="contact-tab-btn active" data-contact-tab="contact-us">📞 Contact Us</button>
-                            <button class="contact-tab-btn" data-contact-tab="request-quote">💰 Request a Quote</button>
+                            <button class="contact-tab-btn active" data-contact-tab="contact-us"><i class="fas fa-phone-alt"></i> Contact Us</button>
+                            <button class="contact-tab-btn" data-contact-tab="request-quote"><i class="fas fa-file-invoice-dollar"></i> Request a Quote</button>
                         </div>
                         
                         <div class="contact-tab-pane active" id="contact-us">
@@ -396,17 +399,17 @@
                                 <div class="contact-info">
                                     <h3>Contact Information</h3>
                                     <div class="contact-details">
-                                        <div class="contact-item"><span class="contact-icon">📞</span><div><strong>Phone / WhatsApp</strong><p><a href="{{ env('WHATSAPP_URL') }}" target="_blank">{{ env('COMPANY_PHONE') }}</a></p></div></div>
-                                        <div class="contact-item"><span class="contact-icon">✉️</span><div><strong>Email</strong><p><a href="mailto:{{ env('COMPANY_EMAIL') }}">{{ env('COMPANY_EMAIL') }}</a></p></div></div>
-                                        <div class="contact-item"><span class="contact-icon">📍</span><div><strong>Location</strong><p>{{ env('COMPANY_ADDRESS') }}</p></div></div>
-                                        <div class="contact-item"><span class="contact-icon">🕒</span><div><strong>Business Hours</strong><p>{{ env('BUSINESS_HOURS') }}</p></div></div>
+                                        <div class="contact-item"><span class="contact-icon"><i class="fas fa-phone-alt"></i></span><div><strong>Phone / WhatsApp</strong><p><a href="{{ env('WHATSAPP_URL') }}" target="_blank">{{ env('COMPANY_PHONE') }}</a></p></div></div>
+                                        <div class="contact-item"><span class="contact-icon"><i class="fas fa-envelope"></i></span><div><strong>Email</strong><p><a href="mailto:{{ env('COMPANY_EMAIL') }}">{{ env('COMPANY_EMAIL') }}</a></p></div></div>
+                                        <div class="contact-item"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><div><strong>Location</strong><p>{{ env('COMPANY_ADDRESS') }}</p></div></div>
+                                        <div class="contact-item"><span class="contact-icon"><i class="fas fa-clock"></i></span><div><strong>Business Hours</strong><p>{{ env('BUSINESS_HOURS') }}</p></div></div>
                                     </div>
                                     <div class="contact-social">
                                         <h4>Follow Us</h4>
                                         <div class="social-links">
-                                            <a href="{{ env('WHATSAPP_URL') }}" target="_blank" class="social-link">📱 WhatsApp</a>
-                                            <a href="{{ env('LINKEDIN_URL') }}" target="_blank" class="social-link">🔗 LinkedIn</a>
-                                            <a href="https://github.com/kravhuravhu" target="_blank" class="social-link"><svg height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
+                                            <a href="{{ env('WHATSAPP_URL') }}" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                            <a href="{{ env('LINKEDIN_URL') }}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                            <a href="https://github.com/kravhuravhu" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
                                         </div>
                                     </div>
                                 </div>
@@ -418,7 +421,7 @@
                                         <div class="form-group"><label>Subject <span>*</span></label><input type="text" name="subject" placeholder="Brief subject line" required></div>
                                         <div class="form-group"><label>Message <span>*</span></label><textarea name="message" rows="5" placeholder="Tell us about your inquiry..." required></textarea></div>
                                         <div class="checkbox-group"><input type="checkbox" name="consent" id="contact_consent" required><label for="contact_consent">I consent to being contacted regarding this inquiry. <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a></label></div>
-                                        <button type="submit" class="submit-btn"><span>Send Message</span><i class="arrow">→</i></button>
+                                        <button type="submit" class="submit-btn"><span>Send Message</span><i class="fas fa-arrow-right arrow"></i></button>
                                     </form>
                                 </div>
                             </div>
@@ -429,7 +432,12 @@
                                 <div class="quote-info">
                                     <h3>Request a Custom Quote</h3>
                                     <p>Tell us about your project requirements and we'll get back to you with a tailored solution and pricing.</p>
-                                    <div class="quote-features"><div class="quote-feature"><span>✅</span><div><strong>Free Consultation</strong><p>Initial consultation to understand your needs</p></div></div><div class="quote-feature"><span>✅</span><div><strong>Customized Solutions</strong><p>Tailored recommendations based on your requirements</p></div></div><div class="quote-feature"><span>✅</span><div><strong>Transparent Pricing</strong><p>No hidden costs, clear breakdown of services</p></div></div><div class="quote-feature"><span>✅</span><div><strong>24hr Response Time</strong><p>Quick turnaround on all quote requests</p></div></div></div>
+                                    <div class="quote-features">
+                                        <div class="quote-feature"><i class="fas fa-comment-dots"></i><div><strong>Free Consultation</strong><p>Initial consultation to understand your needs</p></div></div>
+                                        <div class="quote-feature"><i class="fas fa-puzzle-piece"></i><div><strong>Customized Solutions</strong><p>Tailored recommendations based on your requirements</p></div></div>
+                                        <div class="quote-feature"><i class="fas fa-chart-line"></i><div><strong>Transparent Pricing</strong><p>No hidden costs, clear breakdown of services</p></div></div>
+                                        <div class="quote-feature"><i class="fas fa-clock"></i><div><strong>24hr Response Time</strong><p>Quick turnaround on all quote requests</p></div></div>
+                                    </div>
                                 </div>
                                 <div class="quote-form-wrapper">
                                     <form id="quoteForm" class="contact-form" method="POST" action="">
@@ -442,7 +450,7 @@
                                         <div class="form-group"><label>Project Details / Requirements <span>*</span></label><textarea name="message" rows="5" placeholder="Please describe your project requirements, goals, and any specific features you need..." required></textarea></div>
                                         <div class="form-row"><div class="form-group"><label>Do you have existing branding?</label><select name="has_branding"><option value="">Select</option><option value="yes">Yes, I have existing branding</option><option value="no">No, need design services</option><option value="partial">Partially / In progress</option></select></div><div class="form-group"><label>Do you have existing hosting?</label><select name="has_hosting"><option value="">Select</option><option value="yes">Yes, I have hosting</option><option value="no">No, need hosting</option><option value="unsure">Not sure / Need advice</option></select></div></div>
                                         <div class="checkbox-group"><input type="checkbox" name="consent" id="quote_consent" required><label for="quote_consent">I consent to being contacted regarding this quote request. <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a></label></div>
-                                        <button type="submit" class="submit-btn"><span>Request Quote</span><i class="arrow">→</i></button>
+                                        <button type="submit" class="submit-btn"><span>Request Quote</span><i class="fas fa-arrow-right arrow"></i></button>
                                     </form>
                                 </div>
                             </div>
@@ -457,9 +465,9 @@
                     <h2>Ready to Build Your Digital Presence?</h2>
                     <p>Get {{ env('FIRST_CLIENT_DISCOUNT') }}% off your first project — web development, mobile app, or hosting package.</p>
                     <div class="hero-buttons" style="justify-content: center;">
-                        <a href="{{ env('WHATSAPP_URL') }}" target="_blank" class="btn btn-primary btn-large">📱 WhatsApp Us</a>
-                        <a href="mailto:{{ env('COMPANY_EMAIL') }}" class="btn btn-outline btn-large">📧 Email Us</a>
-                        <a href="#contact" class="btn btn-outline btn-large">📋 Request Quote</a>
+                        <a href="{{ env('WHATSAPP_URL') }}" target="_blank" class="btn btn-primary btn-large"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                        <a href="mailto:{{ env('COMPANY_EMAIL') }}" class="btn btn-outline btn-large"><i class="fas fa-envelope"></i> Email Us</a>
+                        <a href="#contact" class="btn btn-outline btn-large"><i class="fas fa-file-invoice"></i> Request Quote</a>
                     </div>
                 </div>
             </div>
