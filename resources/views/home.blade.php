@@ -1,176 +1,198 @@
 @php
-    $activeSection = $activeSection ?? 'home';
+    $seoData = [
+        'home' => [
+            'title' => 'Arrithnius Solutions | Web, Mobile, Cloud Storage & VM Solutions',
+            'description' => 'Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.',
+            'keywords' => 'web development South Africa, Flutter app development, Laravel developer, digital agency Johannesburg, cloud hosting',
+            'ogTitle' => 'Arrithnius Solutions - High-Performance Digital Platforms',
+            'canonical' => route('home')
+        ],
+        'all-services' => [
+            'title' => 'Web, Mobile & Cloud Services | Arrithnius Solutions',
+            'description' => 'Complete digital solutions: Custom Laravel websites, Flutter mobile apps for iOS/Android, VM hosting with SSH root access, database solutions, secure cloud storage, and DevOps with GitHub.',
+            'keywords' => 'Laravel websites, Flutter mobile apps, VM hosting, SSH access, database solutions, cloud storage',
+            'ogTitle' => 'Complete Digital Solutions - Web • Mobile • Cloud • Storage',
+            'canonical' => route('services')
+        ],
+        'design-services' => [
+            'title' => 'Logo & Branding Design | Arrithnius Solutions',
+            'description' => 'Creative design services including logo design, business cards, company profiles, presentations, brochures, and social media graphics. Professional branding solutions.',
+            'keywords' => 'logo design South Africa, business cards, company profile design, graphic design, branding services',
+            'ogTitle' => 'Creative Design Services - Logo to Complete Brand Identity',
+            'canonical' => route('design')
+        ],
+        'packages' => [
+            'title' => 'Affordable Dev Packages | ' . env('FIRST_CLIENT_DISCOUNT') . '% OFF',
+            'description' => 'Flexible pricing for Laravel websites, Flutter mobile apps, VM hosting, and cloud storage. Get ' . env('FIRST_CLIENT_DISCOUNT') . '% off your first project. Free consultation included.',
+            'keywords' => 'web development pricing, mobile app cost South Africa, VM hosting prices, cloud storage packages',
+            'ogTitle' => 'Pricing & Packages - ' . env('FIRST_CLIENT_DISCOUNT') . '% Off First Project',
+            'canonical' => route('packages')
+        ],
+        'why-choose-us' => [
+            'title' => 'Why Choose Us | ' . env('APP_NAME'),
+            'description' => '100% custom built solutions, full SSH root access, GitHub integration, 24/7 support, and enterprise-grade cloud storage. Based in Gauteng, serving clients worldwide.',
+            'keywords' => 'custom web development, SSH root access, GitHub integration, South African tech company',
+            'ogTitle' => 'Why Choose Us - 100% Custom Digital Solutions',
+            'canonical' => route('why-us')
+        ],
+        'contact' => [
+            'title' => 'Contact Us | Free Quote | ' . env('COMPANY_PHONE_ZA'),
+            'description' => 'Get in touch for web development, mobile apps, or hosting. Call ' . env('COMPANY_PHONE_ZA') . ' or email ' . env('COMPANY_EMAIL') . '. Free consultation available.',
+            'keywords' => 'contact web developer South Africa, get quote, WhatsApp business, Laravel developer contact',
+            'ogTitle' => 'Contact Us - Request a Free Quote Today',
+            'canonical' => route('contact')
+        ]
+    ];
+    
+    $currentSection = $activeSection ?? 'home';
+    $currentSEO = $seoData[$currentSection] ?? $seoData['home'];
 @endphp
+
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-    <head>
+    <html lang="en" data-theme="dark">
+        <head>
         <meta charset="UTF-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         
-        <title>{{ env('SITE_TITLE') }}</title>
-        <link rel="icon" type="image/png" href="{{ secure_asset('images/original_icon.png') }}" style="border-radius:50px;">
-        <link rel="apple-touch-icon" href="{{ secure_asset('images/original_icon.png') }}">
+        <!-- Preconnect for performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdn.cloudflare.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         
-        <!-- Primary SEO Meta Tags -->
-        <meta name="description" content="{{ env('SITE_DESCRIPTION') }}">
-        <meta name="keywords" content="{{ env('SITE_KEYWORDS') }}">
+        <!-- Dynamic SEO Tags -->
+        <title>{{ $currentSEO['title'] }}</title>
+        <meta name="description" content="{{ $currentSEO['description'] }}">
+        <meta name="keyword" content="{{ $currentSEO['keywords'] }}">
         <meta name="author" content="{{ env('COMPANY_NAME') }}">
         <meta name="robots" content="index, follow">
         <meta name="language" content="English">
-        <meta name="revisit-after" content="7 days">
+        <meta name="revisit-after" content="3 days">
         
         <!-- Canonical URL -->
-        <link rel="canonical" href="{{ url('/') }}">
+        <link rel="canonical" href="{{ $currentSEO['canonical'] }}">
         
-        <!-- Open Graph / Social Media Meta Tags -->
+        <!-- language tags -->
+        @php
+            $languages = [
+                'en' => '',
+                'af' => 'af',
+                'zu' => 'zu',
+                'xh' => 'xh',
+                'fr' => 'fr',
+                'de' => 'de',
+                'es' => 'es',
+                'pt' => 'pt',
+                'zh' => 'zh',
+                'ja' => 'ja',
+                'ar' => 'ar',
+                'hi' => 'hi',
+            ];
+            
+            $currentPath = parse_url($currentSEO['canonical'], PHP_URL_PATH);
+            $baseUrl = env('APP_URL');
+        @endphp
+
+        @foreach($languages as $langCode => $langPath)
+            @if($langPath)
+                <link rel="alternate" hrefLang="{{ $langCode }}" href="{{ $baseUrl }}/{{ $langPath }}{{ $currentPath }}" />
+            @else
+                <link rel="alternate" hrefLang="{{ $langCode }}" href="{{ $baseUrl }}{{ $currentPath }}" />
+            @endif
+        @endforeach
+        <link rel="alternate" hrefLang="x-default" href="{{ $baseUrl }}{{ $currentPath }}" />
+        
+        <!-- Open Graph -->
         <meta property="og:type" content="website">
-        <meta property="og:title" content="{{ env('SITE_TITLE') }}">
-        <meta property="og:description" content="{{ env('SITE_SEO_DESCRIPTION') }}">
-        <meta property="og:url" content="{{ url('/') }}">
+        <meta property="og:title" content="{{ $currentSEO['ogTitle'] }}">
+        <meta property="og:description" content="{{ $currentSEO['description'] }}">
+        <meta property="og:url" content="{{ $currentSEO['canonical'] }}">
         <meta property="og:site_name" content="{{ env('COMPANY_NAME') }}">
         <meta property="og:locale" content="en_ZA">
         <meta property="og:image" content="{{ secure_asset('images/original_logo_bg.png') }}">
         <meta property="og:image:alt" content="{{ env('COMPANY_NAME') }} - Digital Solutions Provider">
         
-        <!-- Twitter Card Meta Tags -->
+        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="{{ env('SITE_TITLE') }}">
-        <meta name="twitter:description" content="{{ env('SITE_SEO_DESCRIPTION') }}">
+        <meta name="twitter:title" content="{{ $currentSEO['ogTitle'] }}">
+        <meta name="twitter:description" content="{{ $currentSEO['description'] }}">
         <meta name="twitter:image" content="{{ secure_asset('images/original_logo_bg.png') }}">
-
+        
+        <!-- Geo tags -->
         <meta name="theme-color" content="#a460bf">
         <meta name="geo.region" content="ZA">
         <meta name="geo.position" content="-26.195;28.034">
         <meta name="ICBM" content="-26.195, 28.034">
         
-        <!-- Preconnect for performance -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        
         <!-- Stylesheets -->
+        <link rel="icon" type="image/png" href="{{ secure_asset('images/original_icon.png') }}">
+        <link rel="apple-touch-icon" href="{{ secure_asset('images/original_icon.png') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ secure_asset('components/navbar.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ secure_asset('components/footer.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ secure_asset('css/services-expanded.css') }}" type="text/css">
         
         <!-- Structured Data / Schema.org -->
-        @verbatim
-            <script type="application/ld+json"> 
-                { 
-                    "@context": "https://schema.org", 
-                    "@type": "Organization", 
-                    "name": "Arrithnius Solutions", 
-                    "url": "https://arrithnius.co.za", 
-                    "logo": "https://arrithnius.co.za/images/original_logo_bg.png", 
-                    "description": "Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.", 
-                    "email": "info@arrithnius.co.za", 
-                    "telephone": "0677343682", 
-                    "address": { 
-                        "@type": "PostalAddress", 
-                        "addressLocality": "Gauteng", 
-                        "addressCountry": "ZA" 
-                    }, 
-                    "sameAs": [
-                        "https://wa.me/27677343682", 
-                        "https://linkedin.com/company/arrithnius-solutions", 
-                        "https://github.com/kravhuravhu" 
-                    ] 
-                } 
-            </script> 
-                
-            <script type="application/ld+json"> 
-                { 
-                    "@context": "https://schema.org", 
-                    "@type": "WebSite", 
-                    "name": "Arrithnius Solutions", 
-                    "url": "https://arrithnius.co.za", 
-                    "description": "Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.", 
-                    "potentialAction": 
-                    { 
-                        "@type": "SearchAction", 
-                        "target": "https://arrithnius.co.za/?s=@{{search_term_string}}", 
-                        "query-input": "required name=search_term_string" 
-                    } 
-                }
-            </script>
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "Organization",
+                "name": "{{ env('COMPANY_NAME') }}",
+                "url": "{{ env('APP_URL') }}",
+                "logo": "{{ env('APP_URL') }}/images/original_logo_bg.png",
+                "description": "{{ env('SITE_DESCRIPTION') }}",
+                "email": "{{ env('COMPANY_EMAIL') }}",
+                "telephone": "{{ env('COMPANY_PHONE') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Gauteng",
+                    "addressCountry": "ZA",
+                    "postalCode": "1632",
+                    "streetAddress": "Remote"
+                },
+                "sameAs": [
+                    "{{ env('WHATSAPP_URL') }}",
+                    "{{ env('LINKEDIN_URL') }}",
+                    "{{ env('GITHUB_URL') }}"
+                ]
+            }
+        </script>
 
-            <!-- Dynamic Section SEO Meta Tags -->
-            <script>
-                const sectionSEO = {
-                    'home': {
-                        title: 'Arrithnius Solution | Full-Stack Digital Agency South Africa',
-                        description: 'Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure cloud storage. Based in South Africa. 100+ projects delivered.',
-                        keywords: 'Web development South Africa, Flutter app development, Laravel developer, digital agency Johannesburg',
-                        ogTitle: 'Arrithnius Solution - High-Performance Digital Platforms',
-                        canonical: '{{ url("/") }}'
-                    },
-                    'all-services': {
-                        title: 'Web, Mobile, Cloud & Storage Services | Arrithnius Solution',
-                        description: 'Complete digital solutions: Custom Laravel websites, Flutter mobile apps for iOS/Android, VM hosting with SSH root access, database solutions, secure cloud storage, and DevOps with GitHub. Get a free quote today.',
-                        keywords: 'Laravel websites, Flutter mobile apps, VM hosting, SSH access, database solutions, cloud storage, DevOps GitHub, South Africa',
-                        ogTitle: 'Complete Digital Solutions - Web • Mobile • Cloud • Storage',
-                        canonical: '{{ url("/services") }}'
-                    },
-                    'design-services': {
-                        title: 'Professional Design Services | Logo, Branding & Graphics | Arrithnius',
-                        description: 'Creative design services including logo design, business cards, company profiles, presentations, brochures, social media graphics, and more. Professional branding solutions for your business.',
-                        keywords: 'logo design South Africa, business cards, company profile design, graphic design, branding services, presentation design',
-                        ogTitle: 'Creative Design Services - Logo to Complete Brand Identity',
-                        canonical: '{{ url("/design") }}'
-                    },
-                    'packages': {
-                        title: 'Affordable Development Packages | {{ env("FIRST_CLIENT_DISCOUNT") }}% OFF | Arrithnius Solutions',
-                        description: 'Flexible pricing for Laravel websites, Flutter mobile apps, VM hosting, and cloud storage. Get {{ env("FIRST_CLIENT_DISCOUNT") }}% off your first project. Free consultation included.',
-                        keywords: 'web development pricing, mobile app cost South Africa, VM hosting prices, cloud storage packages, affordable developer',
-                        ogTitle: 'Pricing & Packages - {{ env("FIRST_CLIENT_DISCOUNT") }}% Off First Project',
-                        canonical: '{{ url("/packages") }}'
-                    },
-                    'why-choose-us': {
-                        title: 'Why Choose Arrithnius | South African Tech Experts',
-                        description: '100% custom built solutions, full SSH root access, GitHub integration, 24/7 support, and enterprise-grade cloud storage. Based in Gauteng, serving clients worldwide.',
-                        keywords: 'custom web development, SSH root access, GitHub integration, South African tech company, why choose us',
-                        ogTitle: 'Why Choose Us - 100% Custom Digital Solutions',
-                        canonical: '{{ url("/why-us") }}'
-                    },
-                    'contact': {
-                        title: 'Contact Arrithnius Solution | Free Quote | {{ env("COMPANY_PHONE") }}',
-                        description: 'Get in touch for web development, mobile apps, or hosting. Call {{ env("COMPANY_PHONE") }} or email {{ env("COMPANY_EMAIL") }}. Free consultation available. Request a quote today!',
-                        keywords: 'contact web developer South Africa, get quote, WhatsApp business, Laravel developer contact, Flutter app developer',
-                        ogTitle: 'Contact Us - Request a Free Quote Today',
-                        canonical: '{{ url("/contact") }}'
+        <!-- Web schema -->
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "WebSite",
+                "name": "{{ env('COMPANY_NAME') }}",
+                "url": "{{ env('APP_URL') }}",
+                "description": "{{ env('SITE_DESCRIPTION') }}",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "{{ env('APP_URL') }}/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        </script>
+
+        <!-- WebPage schema -->
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "WebPage",
+                "url": "{{ $currentSEO['canonical'] }}",
+                "name": "{{ $currentSEO['title'] }}",
+                "description": "{{ $currentSEO['description'] }}",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "{{ env('COMPANY_NAME') }}",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "{{ env('APP_URL') }}/images/original_logo_bg.png"
                     }
-                };
-
-                function updateSectionMeta(sectionId) {
-                    const seo = sectionSEO[sectionId];
-                    if (!seo) return;
-                    document.title = seo.title;
-                    let metaDesc = document.querySelector('meta[name="description"]');
-                    if (metaDesc) metaDesc.setAttribute('content', seo.description);
-                    let metaKeywords = document.querySelector('meta[name="keywords"]');
-                    if (metaKeywords) metaKeywords.setAttribute('content', seo.keywords);
-                    let ogTitle = document.querySelector('meta[property="og:title"]');
-                    if (ogTitle) ogTitle.setAttribute('content', seo.ogTitle);
-                    let ogDesc = document.querySelector('meta[property="og:description"]');
-                    if (ogDesc) ogDesc.setAttribute('content', seo.description);
-                    let ogUrl = document.querySelector('meta[property="og:url"]');
-                    if (ogUrl) ogUrl.setAttribute('content', seo.canonical);
-                    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
-                    if (twitterTitle) twitterTitle.setAttribute('content', seo.ogTitle);
-                    let twitterDesc = document.querySelector('meta[name="twitter:description"]');
-                    if (twitterDesc) twitterDesc.setAttribute('content', seo.description);
-                    let canonical = document.querySelector('link[rel="canonical"]');
-                    if (canonical) canonical.setAttribute('href', seo.canonical);
                 }
-
-                const phpSection = '{{ $activeSection }}';
-                if (phpSection && sectionSEO[phpSection]) {
-                    updateSectionMeta(phpSection);
-                }
-            </script>
-        @endverbatim
+            }
+        </script>
     </head>
     <body>
         <canvas id="springCanvas"></canvas>

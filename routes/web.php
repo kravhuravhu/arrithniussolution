@@ -34,3 +34,8 @@ Route::get('/privacy', function () {
 // Form submission routes
 Route::post('/contact/send', [ContactController::class, 'sendContact'])->name('contact.send');
 Route::post('/quote/request', [ContactController::class, 'requestQuote'])->name('quote.request');
+
+// sitemap route
+Route::get('/sitemap.xml', function() {
+    return response()->file(public_path('sitemap.xml'));
+});
