@@ -11,8 +11,6 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteCond %{HTTP_HOST} ^www\.arrithnius\.co\.za [NC]
-    RewriteRule ^(.*)$ https://arrithnius.co.za/$1 [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
