@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SitemapController;
 
 Route::get('/', function () {
     return view('home', ['activeSection' => 'home']);
@@ -36,6 +37,13 @@ Route::post('/contact/send', [ContactController::class, 'sendContact'])->name('c
 Route::post('/quote/request', [ContactController::class, 'requestQuote'])->name('quote.request');
 
 // sitemap route
-Route::get('/sitemap.xml', function() {
-    return response()->file(public_path('sitemap.xml'));
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+
+Route::get('/debug-bot', function () {
+    return response()->json([
+        'user_agent' => request()->userAgent(),
+        'is_bot' => (bool) preg_match('/Googlebot|Bingbot|Slurp/i', request()->userAgent()),
+        'path' => request()->path(),
+        'active_section' => request()->path() === '/' ? 'home' : str_replace('/', '', request()->path())
+    ]);
 });

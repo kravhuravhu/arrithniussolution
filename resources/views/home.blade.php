@@ -75,36 +75,10 @@
         
         <!-- Canonical URL -->
         <link rel="canonical" href="{{ $currentSEO['canonical'] }}">
-        
-        <!-- language tags -->
-        @php
-            $languages = [
-                'en' => '',
-                'af' => 'af',
-                'zu' => 'zu',
-                'xh' => 'xh',
-                'fr' => 'fr',
-                'de' => 'de',
-                'es' => 'es',
-                'pt' => 'pt',
-                'zh' => 'zh',
-                'ja' => 'ja',
-                'ar' => 'ar',
-                'hi' => 'hi',
-            ];
-            
-            $currentPath = parse_url($currentSEO['canonical'], PHP_URL_PATH);
-            $baseUrl = env('APP_URL');
-        @endphp
 
-        @foreach($languages as $langCode => $langPath)
-            @if($langPath)
-                <link rel="alternate" hrefLang="{{ $langCode }}" href="{{ $baseUrl }}/{{ $langPath }}{{ $currentPath }}" />
-            @else
-                <link rel="alternate" hrefLang="{{ $langCode }}" href="{{ $baseUrl }}{{ $currentPath }}" />
-            @endif
-        @endforeach
-        <link rel="alternate" hrefLang="x-default" href="{{ $baseUrl }}{{ $currentPath }}" />
+        <!-- English only -->
+        <link rel="alternate" hrefLang="en" href="{{ $currentSEO['canonical'] }}">
+        <link rel="alternate" hrefLang="x-default" href="{{ $currentSEO['canonical'] }}">
         
         <!-- Open Graph -->
         <meta property="og:type" content="website">
@@ -159,22 +133,6 @@
                     "{{ env('LINKEDIN_URL') }}",
                     "{{ env('GITHUB_URL') }}"
                 ]
-            }
-        </script>
-
-        <!-- Web schema -->
-        <script type="application/ld+json">
-            {
-                "@@context": "https://schema.org",
-                "@@type": "WebSite",
-                "name": "{{ env('COMPANY_NAME') }}",
-                "url": "{{ env('APP_URL') }}",
-                "description": "{{ env('SITE_DESCRIPTION') }}",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "{{ env('APP_URL') }}/?s={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                }
             }
         </script>
 

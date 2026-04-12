@@ -8,5 +8,20 @@ Allow: /contact
 Disallow: /privacy
 Disallow: /admin
 Disallow: /api
+Disallow: /contact/send
+Disallow: /quote/request
+
+# Disallow non-existent language paths
+Disallow: /af/
+Disallow: /de/
+Disallow: /ar/
+Disallow: /zu/
+Disallow: /xh/
+Disallow: /fr/
+Disallow: /es/
+Disallow: /pt/
+Disallow: /zh/
+Disallow: /ja/
+Disallow: /hi/
 
 Sitemap: https://arrithnius.co.za/sitemap.xml
