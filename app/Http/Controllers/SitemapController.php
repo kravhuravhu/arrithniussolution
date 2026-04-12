@@ -10,32 +10,32 @@ class SitemapController extends Controller
     {
         $urls = [
             [
-                'loc' => url('/'),
+                'loc' => secure_url('/'),
                 'priority' => '1.0',
                 'changefreq' => 'weekly'
             ],
             [
-                'loc' => url('/services'),
+                'loc' => secure_url('/services'),
                 'priority' => '0.9',
                 'changefreq' => 'weekly'
             ],
             [
-                'loc' => url('/design'),
+                'loc' => secure_url('/design'),
                 'priority' => '0.8',
                 'changefreq' => 'weekly'
             ],
             [
-                'loc' => url('/packages'),
+                'loc' => secure_url('/packages'),
                 'priority' => '0.9',
                 'changefreq' => 'weekly'
             ],
             [
-                'loc' => url('/why-us'),
+                'loc' => secure_url('/why-us'),
                 'priority' => '0.7',
                 'changefreq' => 'weekly'
             ],
             [
-                'loc' => url('/contact'),
+                'loc' => secure_url('/contact'),
                 'priority' => '0.8',
                 'changefreq' => 'weekly'
             ],
