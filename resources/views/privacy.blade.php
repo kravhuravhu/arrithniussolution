@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <title>Privacy Policy | {{ env('COMPANY_NAME') }}</title>
-    <link rel="icon" type="image/png" href="{{ secure_asset('images/original_icon.png') }}" style="border-radius:50px;">\
+    <link rel="icon" type="image/png" href="{{ secure_asset('images/original_icon.png') }}" style="border-radius:50px;">
 
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
@@ -178,9 +178,24 @@
                 <p>We take data security seriously. We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
                 <p>For clients using our VM hosting and cloud storage services, you retain full control over your data. We do not access your servers or stored files without explicit permission or as required for technical support.</p>
             </div>
+
+            <div class="privacy-section">
+                <h2>4. Data Breach Notification</h2>
+                <p>In the event of a data breach that affects your personal information, we will notify affected individuals and relevant authorities within 72 hours of discovery, as required by POPIA and applicable regulations.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>5. Legal Basis for Processing (POPIA & GDPR)</h2>
+                <p>We process your personal information in accordance with South Africa's Protection of Personal Information Act (POPIA). Our legal bases for processing include:</p>
+                <ul>
+                    <li><strong>Contract performance:</strong> To provide services you've requested</li>
+                    <li><strong>Legitimate interests:</strong> To improve our services and respond to inquiries</li>
+                    <li><strong>Consent:</strong> Where you've explicitly agreed to specific processing</li>
+                </ul>
+            </div>
             
             <div class="privacy-section">
-                <h2>4. Third-Party Services</h2>
+                <h2>6. Third-Party Services</h2>
                 <p>We may use third-party services to operate our business, including:</p>
                 <ul>
                     <li>Email and communication platforms</li>
@@ -192,13 +207,13 @@
             </div>
             
             <div class="privacy-section">
-                <h2>5. Cookies & Tracking</h2>
+                <h2>7. Cookies & Tracking</h2>
                 <p>Our website uses cookies to enhance your browsing experience. Cookies are small text files stored on your device that help us understand how you use our site and improve functionality.</p>
                 <p>You can control cookie preferences through your browser settings. However, disabling cookies may affect certain features of our website.</p>
             </div>
             
             <div class="privacy-section">
-                <h2>6. Your Rights</h2>
+                <h2>8. Your Rights</h2>
                 <p>Depending on your location, you may have the following rights regarding your personal information:</p>
                 <ul>
                     <li>Access to your personal data</li>
@@ -211,27 +226,27 @@
             </div>
             
             <div class="privacy-section">
-                <h2>7. Data Retention</h2>
+                <h2>9. Data Retention</h2>
                 <p>We retain your personal information only as long as necessary to fulfill the purposes for which it was collected, including for legal, accounting, or reporting requirements.</p>
             </div>
             
             <div class="privacy-section">
-                <h2>8. Children's Privacy</h2>
+                <h2>10. Children's Privacy</h2>
                 <p>Our services are not intended for individuals under the age of 16. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us immediately.</p>
             </div>
             
             <div class="privacy-section">
-                <h2>9. International Data Transfers</h2>
+                <h2>11. International Data Transfers</h2>
                 <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your data in accordance with this Privacy Policy.</p>
             </div>
             
             <div class="privacy-section">
-                <h2>10. Changes to This Policy</h2>
+                <h2>12. Changes to This Policy</h2>
                 <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically.</p>
             </div>
             
             <div class="privacy-section">
-                <h2>11. Contact Us</h2>
+                <h2>13. Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
                 <ul>
                     <li>Email: {{ env('COMPANY_EMAIL') }}</li>
