@@ -1,7 +1,7 @@
 @php
     $seoData = [
         'home' => [
-            'title' => 'Arrithnius Solutions | Web, Mobile, Cloud Storage & VM Solutions',
+            'title' => 'Home | Web, Mobile, Cloud Storage & VM Solutions',
             'description' => 'Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.',
             'keywords' => 'web development South Africa, Flutter app development, Laravel developer, digital agency Johannesburg, cloud hosting',
             'ogTitle' => 'Arrithnius Solutions - High-Performance Digital Platforms',
