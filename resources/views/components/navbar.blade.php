@@ -15,7 +15,7 @@
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <a href="/" class="logo" id="logoLink">
-            <img id="navLogo" src="{{ secure_asset('images/original_logo_bg.png') }}" alt="Arrithnius Solution Logo" style="display: block;"/>
+            <img id="navLogo" src="{{ secure_asset('images/original_logo_bg.png') }}" alt="Arrithnius Solution (Pty) Ltd Logo" style="display: block;"/>
         </a>
         
         <div class="nav-links">

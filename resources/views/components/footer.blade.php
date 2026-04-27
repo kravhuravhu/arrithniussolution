@@ -58,7 +58,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; {{ date('Y') }} Arrithnius Solution. All Rights Reserved. | <i class="fas fa-mobile-alt"></i> Mobile • <i class="fas fa-globe"></i> Web • <i class="fas fa-cloud"></i> Cloud • <i class="fas fa-database"></i> Storage</p>
+            <p>&copy; {{ date('Y') }} Arrithnius Solution (Pty) Ltd. All Rights Reserved. | <i class="fas fa-mobile-alt"></i> Mobile • <i class="fas fa-globe"></i> Web • <i class="fas fa-cloud"></i> Cloud • <i class="fas fa-database"></i> Storage</p>
         </div>
 
         <!-- for seo -->
