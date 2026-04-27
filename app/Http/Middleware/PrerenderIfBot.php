@@ -35,7 +35,7 @@ class PrerenderIfBot
             $isBot = true;
         }
 
-        if ($isBot && !$request->is('privacy', 'sitemap.xml', 'contact/send', 'quote/request')) {
+        if ($isBot && !$request->is('privacy', 'sitemap.xml', 'contact/send', 'quote/request', 'debug-bot')) {
             return $this->getPrerenderedPage($request);
         }
         
@@ -52,6 +52,7 @@ class PrerenderIfBot
             $path = 'home';
         }
         
+        // Map URL paths to section IDs
         $sectionMap = [
             '/' => 'home',
             'services' => 'all-services',
@@ -62,8 +63,9 @@ class PrerenderIfBot
         ];
         
         $section = $sectionMap[$request->path()] ?? 'home';
-
-        $cacheKey = 'prerender_' . md5($section);
+        
+        // Cache PER URL, not just per section
+        $cacheKey = 'prerender_' . md5($request->fullUrl());
         
         $html = Cache::remember($cacheKey, 86400, function () use ($section) {
             return view('home', ['activeSection' => $section])->render();
