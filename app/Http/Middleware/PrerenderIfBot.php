@@ -17,10 +17,14 @@ class PrerenderIfBot
         $userAgent = $request->userAgent();
         
         $bots = [
-            'Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot',
-            'Baiduspider', 'YandexBot', 'facebookexternalhit',
-            'Twitterbot', 'LinkedInBot', 'WhatsApp', 'Pinterest',
-            'Applebot', 'AhrefsBot', 'SemrushBot', 'MJ12bot'
+            'Googlebot', 'Googlebot-Image', 'Googlebot-News',
+            'Bingbot', 'BingPreview', 'msnbot', 'bingbot',
+            'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot',
+            'facebookexternalhit', 'Twitterbot', 'LinkedInBot',
+            'Applebot', 'AhrefsBot', 'SemrushBot', 'MJ12bot',
+            'Brave', 'Bravebot', 'BraveSpark', 'BraveExplore',
+            'Edge', 'Edg/', 'Microsoft-WebDAV', 'Microsoft-HTTPAPI',
+            'crawl', 'spider', 'bot', 'scraper', 'WhatsApp', 'Pinterest'
         ];
         
         $isBot = false;

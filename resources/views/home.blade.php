@@ -1,43 +1,43 @@
 @php
     $seoData = [
         'home' => [
-            'title' => 'Home | Arrithnius Solutions',
+            'title' => 'Arrithnius Solutions (Pty) Ltd | Web, Mobile, Cloud, Storage Solutions',
             'description' => 'Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.',
             'keywords' => 'web development South Africa, Flutter app development, Laravel developer, digital agency Johannesburg, cloud hosting',
-            'ogTitle' => 'Arrithnius Solutions - High-Performance Digital Platforms',
+            'ogTitle' => 'Arrithnius Solutions (Pty) Ltd - High-Performance Digital Platforms',
             'canonical' => route('home')
         ],
         'all-services' => [
-            'title' => 'Web, Mobile & Cloud Services | Arrithnius Solutions',
+            'title' => 'Our Services | Arrithnius Solutions (Pty) Ltd',
             'description' => 'Complete digital solutions: Custom Laravel websites, Flutter mobile apps for iOS/Android, VM hosting with SSH root access, database solutions, secure cloud storage, and DevOps with GitHub.',
             'keywords' => 'Laravel websites, Flutter mobile apps, VM hosting, SSH access, database solutions, cloud storage',
             'ogTitle' => 'Complete Digital Solutions - Web • Mobile • Cloud • Storage',
             'canonical' => route('services')
         ],
         'design-services' => [
-            'title' => 'Logo & Branding Design | Arrithnius Solutions',
+            'title' => 'Design & Branding Services | Arrithnius Solutions (Pty) Ltd',
             'description' => 'Creative design services including logo design, business cards, company profiles, presentations, brochures, and social media graphics. Professional branding solutions.',
             'keywords' => 'logo design South Africa, business cards, company profile design, graphic design, branding services',
             'ogTitle' => 'Creative Design Services - Logo to Complete Brand Identity',
             'canonical' => route('design')
         ],
         'packages' => [
-            'title' => 'Affordable Dev Packages | ' . env('FIRST_CLIENT_DISCOUNT') . '% OFF',
+            'title' => 'Affordable Dev Packages | ' . env('FIRST_CLIENT_DISCOUNT') . '% OFF | Arrithnius Solutions (Pty) Ltd',
             'description' => 'Flexible pricing for Laravel websites, Flutter mobile apps, VM hosting, and cloud storage. Get ' . env('FIRST_CLIENT_DISCOUNT') . '% off your first project. Free consultation included.',
             'keywords' => 'web development pricing, mobile app cost South Africa, VM hosting prices, cloud storage packages',
             'ogTitle' => 'Pricing & Packages - ' . env('FIRST_CLIENT_DISCOUNT') . '% Off First Project',
             'canonical' => route('packages')
         ],
         'why-choose-us' => [
-            'title' => 'Why Choose Us | ' . env('APP_NAME'),
+            'title' => 'Why Choose Us| South African Tech Company',
             'description' => '100% custom built solutions, full SSH root access, GitHub integration, 24/7 support, and enterprise-grade cloud storage. Based in Gauteng, serving clients worldwide.',
             'keywords' => 'custom web development, SSH root access, GitHub integration, South African tech company',
             'ogTitle' => 'Why Choose Us - 100% Custom Digital Solutions',
             'canonical' => route('why-us')
         ],
         'contact' => [
-            'title' => 'Contact Us | Free Quote | ' . env('COMPANY_PHONE_ZA'),
-            'description' => 'Get in touch for web development, mobile apps, or hosting. Call ' . env('COMPANY_PHONE_ZA') . ' or email ' . env('COMPANY_EMAIL') . '. Free consultation available.',
+            'title' => 'Contact Us | Free Quote | 067 734 3682',
+            'description' => 'Get in touch for web development, mobile apps, or hosting. Call 067 734 3682 or email info@arrithnius.co.za. Free consultation available.',
             'keywords' => 'contact web developer South Africa, get quote, WhatsApp business, Laravel developer contact',
             'ogTitle' => 'Contact Us - Request a Free Quote Today',
             'canonical' => route('contact')
@@ -46,6 +46,32 @@
     
     $currentSection = $activeSection ?? 'home';
     $currentSEO = $seoData[$currentSection] ?? $seoData['home'];
+
+    // Detect bots
+    $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+    $botKeywords = [
+            'Googlebot', 'Googlebot-Image', 'Googlebot-News',
+            'Bingbot', 'BingPreview', 'msnbot', 'bingbot',
+            'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot',
+            'facebookexternalhit', 'Twitterbot', 'LinkedInBot',
+            'Applebot', 'AhrefsBot', 'SemrushBot', 'MJ12bot',
+            'Brave', 'Bravebot', 'BraveSpark', 'BraveExplore',
+            'Edge', 'Edg/', 'Microsoft-WebDAV', 'Microsoft-HTTPAPI',
+            'crawl', 'spider', 'bot', 'scraper', 'WhatsApp', 'Pinterest'
+        ];
+    $isBot = false;
+    foreach ($botKeywords as $bot) {
+        if (stripos($userAgent, $bot) !== false) {
+            $isBot = true;
+            break;
+        }
+    }
+
+    // bots: show see the section matching the URL
+    $showSection = $currentSection;
+    if (!$isBot) {
+        $showSection = 'all';
+    }
 @endphp
 
 <!DOCTYPE html>
@@ -162,6 +188,7 @@
 
         <main>
             <!-- HERO SECTION -->
+            @if(!$isBot || $currentSection == 'home')
             <section id="home" class="hero">
                 <div class="container">
                     <div class="hero-content fall-reveal">
@@ -201,8 +228,10 @@
                     </div>
                 </div>
             </div>
+            @endif
 
             <!-- ALL SERVICES SECTION -->
+            @if(!$isBot || $currentSection == 'all-services' || $currentSection == 'home')
             <section id="all-services" class="section">
                 <div class="container">
                     <div class="section-header reveal">
@@ -267,8 +296,10 @@
                     </div>
                 </div>
             </section>
+            @endif
 
             <!-- DESIGN SERVICES SECTION -->
+            @if(!$isBot || $currentSection == 'design-services' || $currentSection == 'home')
             <section id="design-services" class="section">
                 <div class="container">
                     <div class="section-header reveal">
@@ -287,8 +318,10 @@
                     </div>
                 </div>
             </section>
+            @endif
 
             <!-- PACKAGES SECTION -->
+            @if(!$isBot || $currentSection == 'packages' || $currentSection == 'home')
             <section id="packages" class="section">
                 <div class="container">
                     <div class="section-header reveal">
@@ -303,8 +336,10 @@
                     </div>
                 </div>
             </section>
+            @endif
 
             <!-- WHY CHOOSE US SECTION -->
+            @if(!$isBot || $currentSection == 'why-choose-us' || $currentSection == 'home')
             <section id="why-choose-us" class="section">
                 <div class="container">
                     <div class="section-header reveal">
@@ -337,8 +372,10 @@
                     </div>
                 </div>
             </section>
+            @endif
 
             <!-- CONTACT & QUOTE SECTION -->
+            @if(!$isBot || $currentSection == 'contact' || $currentSection == 'home')
             <section id="contact" class="section">
                 <div class="container">
                     <div class="section-header reveal">
@@ -429,6 +466,7 @@
                     </div>
                 </div>
             </div>
+            @endif
         </main>
 
         @include('components.footer')
