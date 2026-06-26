@@ -44,15 +44,17 @@ class ContactController extends Controller
                 'submitted_at' => now()->format('Y-m-d H:i:s')
             ];
 
+            // Send email to company
             Mail::send('emails.contact-notification', $formData, function ($message) use ($formData) {
                 $message->to(env('COMPANY_EMAIL', 'info@arrithnius.co.za'))
-                        ->subject('New Contact Form Submission: ' . $formData['subject'])
+                        ->subject('Contact Form Submission: ' . $formData['subject'])
                         ->replyTo($formData['email'], $formData['name']);
             });
 
+            // Send auto-reply to customer
             Mail::send('emails.contact-auto-reply', $formData, function ($message) use ($formData) {
                 $message->to($formData['email'], $formData['name'])
-                        ->subject('Thank you for contacting Arrithnius Solution');
+                        ->subject('Thank you for contacting Arrithnius Solutions');
             });
 
             Log::info('Contact form submitted', [
@@ -71,7 +73,7 @@ class ContactController extends Controller
             
             return response()->json([
                 'success' => false,
-                'message' => 'An error occurred while sending your message. Please try again later or contact us directly via phone/WhatsApp.'
+                'message' => 'An error occurred while sending your message. Please try again later or contact us directly via phone or WhatsApp.'
             ], 500);
         }
     }
@@ -122,14 +124,14 @@ class ContactController extends Controller
             // Send email to company
             Mail::send('emails.quote-notification', $formData, function ($message) use ($formData) {
                 $message->to(env('COMPANY_EMAIL', 'info@arrithnius.co.za'))
-                        ->subject('New Quote Request from ' . $formData['company'])
+                        ->subject('Quote Request from ' . $formData['company'])
                         ->replyTo($formData['email'], $formData['name']);
             });
 
             // Send auto-reply to customer
             Mail::send('emails.quote-auto-reply', $formData, function ($message) use ($formData) {
                 $message->to($formData['email'], $formData['name'])
-                        ->subject('Your Quote Request - Arrithnius Solution');
+                        ->subject('Quote Request - Arrithnius Solutions');
             });
 
             Log::info('Quote request submitted', [

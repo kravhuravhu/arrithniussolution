@@ -39,7 +39,9 @@ class PrerenderIfBot
             $isBot = true;
         }
 
-        if ($isBot && !$request->is('privacy', 'sitemap.xml', 'contact/send', 'quote/request', 'debug-bot')) {
+        // Excluded routes
+        $excludedRoutes = ['privacy', 'sitemap.xml', 'contact/send', 'quote/request', 'debug-bot'];
+        if ($isBot && !in_array($request->path(), $excludedRoutes)) {
             return $this->getPrerenderedPage($request);
         }
         
@@ -52,9 +54,7 @@ class PrerenderIfBot
     private function getPrerenderedPage(Request $request): Response
     {
         $path = $request->path();
-        if ($path === '/') {
-            $path = 'home';
-        }
+        $path = $path === '/' ? 'home' : $path;
         
         // Map URL paths to section IDs
         $sectionMap = [
@@ -68,13 +68,20 @@ class PrerenderIfBot
         
         $section = $sectionMap[$request->path()] ?? 'home';
         
-        // Cache PER URL, not just per section
+        // Cache PER URL with better key
         $cacheKey = 'prerender_' . md5($request->fullUrl());
         
         $html = Cache::remember($cacheKey, 86400, function () use ($section) {
-            return view('home', ['activeSection' => $section])->render();
+            $view = view('home', ['activeSection' => $section]);
+            $rendered = $view->render();
+            
+            return $rendered;
         });
         
-        return response($html)->header('X-Robots-Tag', 'index, follow');
+        // HTTP headers for SEO
+        return response($html)
+            ->header('X-Robots-Tag', 'index, follow')
+            ->header('Cache-Control', 'public, max-age=86400')
+            ->header('Vary', 'User-Agent');
     }
 }

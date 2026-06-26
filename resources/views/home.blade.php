@@ -1,82 +1,79 @@
 @php
     $seoData = [
         'home' => [
-            'title' => 'Arrithnius Solutions (Pty) Ltd | Web, Mobile, Cloud, Storage Solutions',
-            'description' => 'Full-stack development agency specializing in Laravel websites, Flutter mobile apps, cloud VM hosting, database solutions, and secure file storage. Based in South Africa.',
-            'keywords' => 'web development South Africa, Flutter app development, Laravel developer, digital agency Johannesburg, cloud hosting',
-            'ogTitle' => 'Arrithnius Solutions (Pty) Ltd - High-Performance Digital Platforms',
-            'canonical' => route('home')
+            'title' => 'Arrithnius Solutions | Web Development & Mobile App Agency | BBBEE Level 1',
+            'description' => 'Professional web development, Laravel websites, Flutter mobile apps, and cloud hosting. BBBEE Level 1 certified digital agency in South Africa. Free consultation.',
+            'keywords' => 'web development South Africa, Laravel developer, Flutter app development, digital agency Johannesburg, cloud hosting, website design, BBBEE Level 1',
+            'ogTitle' => 'Arrithnius Solutions - Web Development & Digital Agency South Africa',
+            'canonical' => route('home'),
+            'breadcrumb' => 'Home',
+            'primaryKeywords' => 'web development, Laravel, Flutter, cloud hosting'
         ],
         'all-services' => [
-            'title' => 'Our Services | Arrithnius Solutions (Pty) Ltd',
-            'description' => 'Complete digital solutions: Custom Laravel websites, Flutter mobile apps for iOS/Android, VM hosting with SSH root access, database solutions, secure cloud storage, and DevOps with GitHub.',
-            'keywords' => 'Laravel websites, Flutter mobile apps, VM hosting, SSH access, database solutions, cloud storage',
-            'ogTitle' => 'Complete Digital Solutions - Web • Mobile • Cloud • Storage',
-            'canonical' => route('services')
+            'title' => 'Web Development & Digital Solutions | Arrithnius South Africa',
+            'description' => 'Custom Laravel websites, Flutter mobile apps, cloud hosting, and database solutions. BBBEE Level 1 certified. Get a free quote for your web project today.',
+            'keywords' => 'Laravel websites, Flutter mobile apps, VM hosting, web development, SSH access, database solutions, cloud storage, BBBEE Level 1',
+            'ogTitle' => 'Web Development & Digital Solutions - Web • Mobile • Cloud • Storage',
+            'canonical' => route('services'),
+            'breadcrumb' => 'Services',
+            'primaryKeywords' => 'web development, Laravel, Flutter, hosting'
         ],
         'design-services' => [
-            'title' => 'Design & Branding Services | Arrithnius Solutions (Pty) Ltd',
-            'description' => 'Creative design services including logo design, business cards, company profiles, presentations, brochures, and social media graphics. Professional branding solutions.',
-            'keywords' => 'logo design South Africa, business cards, company profile design, graphic design, branding services',
+            'title' => 'Professional Design & Branding Services | Arrithnius Solutions',
+            'description' => 'Expert logo design, business cards, company profiles, and branding services. Perfect for your new website or rebrand. BBBEE Level 1 certified agency.',
+            'keywords' => 'logo design South Africa, business cards, company profile design, graphic design, branding services, web design, BBBEE Level 1',
             'ogTitle' => 'Creative Design Services - Logo to Complete Brand Identity',
-            'canonical' => route('design')
+            'canonical' => route('design'),
+            'breadcrumb' => 'Design',
+            'primaryKeywords' => 'logo design, branding, graphic design'
         ],
         'packages' => [
-            'title' => 'Affordable Dev Packages | ' . env('FIRST_CLIENT_DISCOUNT') . '% OFF | Arrithnius Solutions (Pty) Ltd',
-            'description' => 'Flexible pricing for Laravel websites, Flutter mobile apps, VM hosting, and cloud storage. Get ' . env('FIRST_CLIENT_DISCOUNT') . '% off your first project. Free consultation included.',
-            'keywords' => 'web development pricing, mobile app cost South Africa, VM hosting prices, cloud storage packages',
-            'ogTitle' => 'Pricing & Packages - ' . env('FIRST_CLIENT_DISCOUNT') . '% Off First Project',
-            'canonical' => route('packages')
+            'title' => 'Affordable Web Development Packages | 10.25% OFF First Project',
+            'description' => 'Flexible pricing for Laravel websites, Flutter apps, and cloud hosting. BBBEE Level 1 certified. Get 10.25% off your first web development project.',
+            'keywords' => 'web development pricing, Laravel website cost, mobile app cost South Africa, VM hosting prices, cloud storage packages, BBBEE Level 1',
+            'ogTitle' => 'Web Development Pricing - 10.25% Off First Project',
+            'canonical' => route('packages'),
+            'breadcrumb' => 'Packages',
+            'primaryKeywords' => 'web development pricing, Laravel, Flutter'
         ],
         'why-choose-us' => [
-            'title' => 'Why Choose Us| South African Tech Company',
-            'description' => '100% custom built solutions, full SSH root access, GitHub integration, 24/7 support, and enterprise-grade cloud storage. Based in Gauteng, serving clients worldwide.',
-            'keywords' => 'custom web development, SSH root access, GitHub integration, South African tech company',
-            'ogTitle' => 'Why Choose Us - 100% Custom Digital Solutions',
-            'canonical' => route('why-us')
+            'title' => 'Why Choose Arrithnius | Web Development Agency South Africa',
+            'description' => '100% custom built websites, SSH root access, GitHub integration, 24/7 support. BBBEE Level 1 certified web development agency in Gauteng.',
+            'keywords' => 'custom web development, SSH root access, GitHub integration, South African web agency, website development, BBBEE Level 1',
+            'ogTitle' => 'Why Choose Us - Custom Web & Mobile Development',
+            'canonical' => route('why-us'),
+            'breadcrumb' => 'Why Us',
+            'primaryKeywords' => 'custom web development, web agency'
         ],
         'contact' => [
-            'title' => 'Contact Us | Free Quote | 067 734 3682',
-            'description' => 'Get in touch for web development, mobile apps, or hosting. Call 067 734 3682 or email info@arrithnius.co.za. Free consultation available.',
-            'keywords' => 'contact web developer South Africa, get quote, WhatsApp business, Laravel developer contact',
-            'ogTitle' => 'Contact Us - Request a Free Quote Today',
-            'canonical' => route('contact')
+            'title' => 'Contact Arrithnius | Free Web Development Quote | 067 734 3682',
+            'description' => 'Get in touch for web development, mobile apps, or hosting. BBBEE Level 1 certified. Call 067 734 3682 or email info@arrithnius.co.za. Free consultation.',
+            'keywords' => 'contact web developer South Africa, get quote, WhatsApp business, Laravel developer contact, web design quote, BBBEE Level 1',
+            'ogTitle' => 'Contact Us - Request a Free Web Development Quote',
+            'canonical' => route('contact'),
+            'breadcrumb' => 'Contact',
+            'primaryKeywords' => 'contact web developer, get quote'
         ]
     ];
     
+    // Get current section data
     $currentSection = $activeSection ?? 'home';
     $currentSEO = $seoData[$currentSection] ?? $seoData['home'];
 
-    // Detect bots
+    // Bot detection
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
-    $botKeywords = [
-            'Googlebot', 'Googlebot-Image', 'Googlebot-News',
-            'Bingbot', 'BingPreview', 'msnbot', 'bingbot',
-            'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot',
-            'facebookexternalhit', 'Twitterbot', 'LinkedInBot',
-            'Applebot', 'AhrefsBot', 'SemrushBot', 'MJ12bot',
-            'Brave', 'Bravebot', 'BraveSpark', 'BraveExplore',
-            'Edge', 'Edg/', 'Microsoft-WebDAV', 'Microsoft-HTTPAPI',
-            'crawl', 'spider', 'bot', 'scraper', 'WhatsApp', 'Pinterest'
-        ];
+    $botKeywords = ['Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot', 'facebookexternalhit', 'Twitterbot', 'LinkedInBot', 'Applebot', 'AhrefsBot', 'SemrushBot', 'MJ12bot', 'crawl', 'spider', 'bot', 'scraper', 'WhatsApp', 'Pinterest'];
     $isBot = false;
     foreach ($botKeywords as $bot) {
-        if (stripos($userAgent, $bot) !== false) {
-            $isBot = true;
-            break;
-        }
+        if (stripos($userAgent, $bot) !== false) { $isBot = true; break; }
     }
 
-    // bots: show see the section matching the URL
-    $showSection = $currentSection;
-    if (!$isBot) {
-        $showSection = 'all';
-    }
+    $showSection = $isBot ? $currentSection : 'all';
 @endphp
 
 <!DOCTYPE html>
-    <html lang="en" data-theme="dark">
-        <head>
+<html lang="en" data-theme="dark">
+    <head>
         <meta charset="UTF-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -89,22 +86,25 @@
         
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        
-        <!-- Dynamic SEO Tags -->
+
         <title>{{ $currentSEO['title'] }}</title>
         <meta name="description" content="{{ $currentSEO['description'] }}">
-        <meta name="keyword" content="{{ $currentSEO['keywords'] }}">
-        <meta name="author" content="{{ env('COMPANY_NAME') }}">
+        <meta name="keywords" content="{{ $currentSEO['keywords'] }}">
+        <meta name="author" content="Arrithnius Solutions (Pty) Ltd">
         <meta name="robots" content="index, follow">
         <meta name="language" content="English">
         <meta name="revisit-after" content="3 days">
+        
+        <!-- Google Site Verification -->
+        <meta name="google-site-verification" content="FygbQR03Z1fh8X5t4nwPjagpz4gWUzt8pe-6V2nYGMg">
         
         <!-- Canonical URL -->
         <link rel="canonical" href="{{ $currentSEO['canonical'] }}">
 
         <!-- English only -->
-        <link rel="alternate" hrefLang="en" href="{{ $currentSEO['canonical'] }}">
-        <link rel="alternate" hrefLang="x-default" href="{{ $currentSEO['canonical'] }}">
+        <link rel="alternate" hreflang="en" href="{{ $currentSEO['canonical'] }}">
+        <link rel="alternate" hreflang="en-ZA" href="{{ $currentSEO['canonical'] }}">
+        <link rel="alternate" hreflang="x-default" href="{{ $currentSEO['canonical'] }}">
         
         <!-- Open Graph -->
         <meta property="og:type" content="website">
@@ -135,6 +135,8 @@
         <link rel="stylesheet" href="{{ secure_asset('components/navbar.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ secure_asset('components/footer.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ secure_asset('css/services-expanded.css') }}" type="text/css">
+        <!-- Google Verification -->
+        <meta name="google-site-verification" content="FygbQR03Z1fh8X5t4nwPjagpz4gWUzt8pe-6V2nYGMg">
         
         <!-- Structured Data / Schema.org -->
         <script type="application/ld+json">
@@ -180,6 +182,94 @@
                 }
             }
         </script>
+
+        <!-- Breadcrumb Schema -->
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "{{ route('home') }}"
+                    },
+                    @if($currentSection != 'home')
+                    {
+                        "@@type": "ListItem",
+                        "position": 2,
+                        "name": "{{ $currentSEO['breadcrumb'] ?? $currentSection }}",
+                        "item": "{{ $currentSEO['canonical'] }}"
+                    }
+                    @endif
+                ]
+            }
+        </script>
+
+        <!-- Organization Schema with BBBEE Level 1 -->
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "Organization",
+                "name": "{{ env('COMPANY_NAME') }}",
+                "alternateName": "Arrithnius",
+                "url": "{{ env('APP_URL') }}",
+                "logo": "{{ env('APP_URL') }}/images/original_logo_bg.png",
+                "description": "BBBEE Level 1 certified web development and mobile app agency in South Africa.",
+                "email": "{{ env('COMPANY_EMAIL') }}",
+                "telephone": "{{ env('COMPANY_PHONE') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Gauteng",
+                    "addressCountry": "ZA"
+                },
+                "sameAs": [
+                    "{{ env('WHATSAPP_URL') }}",
+                    "{{ env('LINKEDIN_URL') }}",
+                    "{{ env('GITHUB_URL') }}"
+                ],
+                "award": "BBBEE Level 1 Contributor"
+            }
+        </script>
+
+        <!-- LinkedIn Schema for Updates -->
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "CollectionPage",
+                "name": "Arrithnius Solutions LinkedIn Updates",
+                "description": "Latest news and updates from Arrithnius Solutions",
+                "url": "{{ env('LINKEDIN_URL') }}",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "{{ env('COMPANY_NAME') }}",
+                }
+            }
+        </script>
+
+        <!-- Service Schema for Web Development -->
+        <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "Service",
+            "serviceType": "Web Development",
+            "provider": {
+                "@@type": "Organization",
+                "name": "{{ env('COMPANY_NAME') }}",
+            },
+            "areaServed": "South Africa",
+            "description": "Custom Laravel website development and Flutter mobile app development services.",
+            "offers": {
+                "@@type": "Offer",
+                "priceSpecification": {
+                    "@@type": "PriceSpecification",
+                    "price": "Contact for pricing",
+                    "priceCurrency": "ZAR"
+                }
+            }
+        }
+        </script>
     </head>
     <body>
         <canvas id="springCanvas"></canvas>
@@ -193,13 +283,13 @@
                 <div class="container">
                     <div class="hero-content fall-reveal">
                         <div class="hero-badge"><i class="fas fa-code"></i> Full-Stack Digital Solutions Agency</div>
-                        <h1>High-Performance<br><span class="gradient-text">Digital Platforms</span><br>That Scale With You</h1>
+                        <h1>High-Performance<br><span class="gradient-text">Digital Platforms</span><br>That Grow Your Business</h1>
                         <div class="typing-container">
                             <span class="typing-text" id="typing-text"></span>
                             <span class="typing-cursor"></span>
                         </div>
                         <p class="hero-description">
-                            Right from Laravel websites and Flutter mobile apps to enterprise VM hosting and secure cloud storage — we build complete digital ecosystems that scale with your business.
+                            Right from Laravel websites and Flutter mobile apps to enterprise VM hosting and secure cloud storage, we build complete digital solutions that scale with you.
                         </p>
                         <div class="hero-buttons">
                             <a href="#contact" class="btn btn-primary btn-large">Start Your Project <i class="fas fa-arrow-right"></i></a>
@@ -344,15 +434,59 @@
                 <div class="container">
                     <div class="section-header reveal">
                         <h2>Why <span class="gradient-text">Choose Us</span></h2>
-                        <p>What makes Arrithnius Solution different from the rest</p>
+                        <p>What makes Arrithnius Solutions different from the rest</p>
                     </div>
                     <div class="why-grid">
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-check-circle"></i></div><h4>100% Custom Built</h4><p>No templates or page builders. Every website and app is crafted specifically for your unique business needs.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-layer-group"></i></div><h4>Full-Stack Expertise</h4><p>From Laravel backends to Flutter mobile apps, we handle the entire technology stack.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-terminal"></i></div><h4>SSH Root Access</h4><p>Full control over your VM with root access. Install any software, configure networks and access endpoints as needed.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>Secure Cloud Storage</h4><p>Enterprise-grade storage with encryption, CDN, and automatic backup solutions.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fab fa-github"></i></div><h4>GitHub Integration</h4><p>Professional version control, CI/CD pipelines, and collaborative development workflows.</p></div>
-                        <div class="why-card reveal"><div class="shiny-overlay"></div><div class="why-icon"><i class="fas fa-map-marker-alt"></i></div><h4>Remote, South African</h4><p>Based in South Africa. Remote & international support, and personalized service you can trust.</p></div>
+                        <div class="why-card reveal">
+                            <div class="shiny-overlay">
+
+                            </div>
+                            <div class="why-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>100% Custom Web Development</h4>
+                            <p>No templates or page builders. Every website and app is crafted specifically for your unique business needs.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <div class="shiny-overlay"></div>
+                            <div class="why-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h4>Full-Stack Expertise</h4>
+                            <p>From Laravel backends to Flutter mobile apps, we handle the entire technology stack.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <div class="shiny-overlay"></div>
+                            <div class="why-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4>SSH Root Access</h4>
+                            <p>Full control over your VM with root access. Install any software, configure networks and access endpoints as needed.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <div class="shiny-overlay"></div>
+                            <div class="why-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Secure Cloud Storage</h4>
+                            <p>Enterprise-grade storage with encryption, CDN, and automatic backup solutions.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <div class="shiny-overlay"></div>
+                            <div class="why-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h4>GitHub Integration</h4>
+                            <p>Professional version control, CI/CD pipelines, and collaborative development workflows.</p>
+                        </div>
+                        <div class="why-card reveal">
+                            <div class="shiny-overlay"></div>
+                            <div class="why-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Remote, South African</h4>
+                            <p>Based in South Africa. Remote & international support, and personalized service you can trust.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -458,7 +592,7 @@
             <div class="container">
                 <div class="cta-section reveal">
                     <h2>Ready to Build Your Digital Presence?</h2>
-                    <p>Get {{ env('FIRST_CLIENT_DISCOUNT') }}% off your first project — web development, mobile app, or hosting package.</p>
+                    <p>Get {{ env('FIRST_CLIENT_DISCOUNT') }}% off your first web development or mobile app project.</p>
                     <div class="hero-buttons" style="justify-content: center;">
                         <a href="{{ env('WHATSAPP_URL') }}" target="_blank" class="btn btn-primary btn-large"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
                         <a href="mailto:{{ env('COMPANY_EMAIL') }}" class="btn btn-outline btn-large"><i class="fas fa-envelope"></i> Email Us</a>
