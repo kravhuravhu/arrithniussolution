@@ -10,6 +10,17 @@ Disallow: /admin
 Disallow: /api
 Disallow: /contact/send
 Disallow: /quote/request
+Disallow: /debug-bot
+
+# Allow all bots
+User-agent: Googlebot
+Meta-robots: noindex, follow
+Allow: /
+Allow: /services
+Allow: /design
+Allow: /packages
+Allow: /why-us
+Allow: /contact
 
 # Disallow non-existent language paths
 Disallow: /af/
@@ -23,5 +34,9 @@ Disallow: /pt/
 Disallow: /zh/
 Disallow: /ja/
 Disallow: /hi/
+
+# Brand protection
+Disallow: /?q=arrhenius
+Disallow: /arrhenius
 
 Sitemap: https://arrithnius.co.za/sitemap.xml
