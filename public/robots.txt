@@ -38,5 +38,8 @@ Disallow: /hi/
 # Brand protection
 Disallow: /?q=arrhenius
 Disallow: /arrhenius
+Disallow: /arrhenius-equation
+Disallow: /anritsu-solutions
+Disallow: /anritsu
 
 Sitemap: https://arrithnius.co.za/sitemap.xml
