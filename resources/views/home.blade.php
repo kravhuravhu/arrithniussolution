@@ -243,7 +243,7 @@
                 "url": "{{ env('LINKEDIN_URL') }}",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "{{ env('COMPANY_NAME') }}",
+                    "name": "{{ env('COMPANY_NAME') }}"
                 }
             }
         </script>
@@ -256,7 +256,7 @@
             "serviceType": "Web Development",
             "provider": {
                 "@@type": "Organization",
-                "name": "{{ env('COMPANY_NAME') }}",
+                "name": "{{ env('COMPANY_NAME') }}"
             },
             "areaServed": "South Africa",
             "description": "Custom Laravel website development and Flutter mobile app development services.",
