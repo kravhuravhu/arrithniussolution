@@ -203,7 +203,7 @@
         @else
             <script type="application/ld+json">
                 {
-                    "@context": "https://schema.org",
+                    "@@context": "https://schema.org",
                     "@@type": "BreadcrumbList",
                     "itemListElement": [
                         {
@@ -261,7 +261,7 @@
                 "description": "Latest news and updates from Arrithnius Solutions",
                 "url": "{{ env('LINKEDIN_URL') }}",
                 "publisher": {
-                    "@type": "Organization",
+                    "@@type": "Organization",
                     "name": "{{ env('COMPANY_NAME') }}"
                 }
             }
