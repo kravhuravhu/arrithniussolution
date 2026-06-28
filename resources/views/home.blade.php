@@ -145,16 +145,17 @@
                 "@@type": "Organization",
                 "name": "{{ env('COMPANY_NAME') }}",
                 "url": "{{ env('APP_URL') }}",
-                "logo": "{{ env('APP_URL') }}/images/original_logo_bg.png",
+                "logo": {
+                    "@@type":"ImageObject",
+                    "{{ env('APP_URL') }}/images/original_logo_bg.png"
+                },
                 "description": "{{ env('SITE_DESCRIPTION') }}",
                 "email": "{{ env('COMPANY_EMAIL') }}",
                 "telephone": "{{ env('COMPANY_PHONE') }}",
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Gauteng",
-                    "addressCountry": "ZA",
-                    "postalCode": "1632",
-                    "streetAddress": "Remote"
+                    "addressCountry": "South Africa",
                 },
                 "sameAs": [
                     "{{ env('WHATSAPP_URL') }}",
@@ -184,28 +185,43 @@
         </script>
 
         <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-            {
-                "@@context": "https://schema.org",
-                "@@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "{{ route('home') }}"
-                    },
-                    @if($currentSection != 'home')
-                    {
-                        "@@type": "ListItem",
-                        "position": 2,
-                        "name": "{{ $currentSEO['breadcrumb'] ?? $currentSection }}",
-                        "item": "{{ $currentSEO['canonical'] }}"
-                    }
-                    @endif
-                ]
-            }
-        </script>
+        @if($currentSection == 'home')
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "{{ route('home') }}"
+                        }
+                    ]
+                }
+            </script>
+        @else
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "{{ route('home') }}"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "{{ $currentSEO['breadcrumb'] ?? ucfirst($currentSection) }}",
+                            "item": "{{ $currentSEO['canonical'] }}"
+                        }
+                    ]
+                }
+            </script>
+        @endif
 
         <!-- Organization Schema with BBBEE Level 1 -->
         <script type="application/ld+json">
@@ -215,7 +231,10 @@
                 "name": "{{ env('COMPANY_NAME') }}",
                 "alternateName": "Arrithnius",
                 "url": "{{ env('APP_URL') }}",
-                "logo": "{{ env('APP_URL') }}/images/original_logo_bg.png",
+                "logo": {
+                    "@@type":"ImageObject",
+                    "{{ env('APP_URL') }}/images/original_logo_bg.png"
+                },
                 "description": "BBBEE Level 1 certified web development and mobile app agency in South Africa.",
                 "email": "{{ env('COMPANY_EMAIL') }}",
                 "telephone": "{{ env('COMPANY_PHONE') }}",
@@ -258,16 +277,11 @@
                 "@@type": "Organization",
                 "name": "{{ env('COMPANY_NAME') }}"
             },
-            "areaServed": "South Africa",
-            "description": "Custom Laravel website development and Flutter mobile app development services.",
-            "offers": {
-                "@@type": "Offer",
-                "priceSpecification": {
-                    "@@type": "PriceSpecification",
-                    "price": "Contact for pricing",
-                    "priceCurrency": "ZAR"
-                }
-            }
+            "areaServed": {
+                "@@type": "Country",
+                "name": "South Africa"
+            },
+            "description": "Custom Laravel website development and Flutter mobile app development services."
         }
         </script>
     </head>
