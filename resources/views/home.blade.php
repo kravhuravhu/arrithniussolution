@@ -153,7 +153,7 @@
                 "email": "{{ env('COMPANY_EMAIL') }}",
                 "telephone": "{{ env('COMPANY_PHONE') }}",
                 "address": {
-                    "@type": "PostalAddress",
+                    "@@type": "PostalAddress",
                     "addressLocality": "Gauteng",
                     "addressCountry": "South Africa",
                 },
@@ -174,10 +174,10 @@
                 "name": "{{ $currentSEO['title'] }}",
                 "description": "{{ $currentSEO['description'] }}",
                 "publisher": {
-                    "@type": "Organization",
+                    "@@type": "Organization",
                     "name": "{{ env('COMPANY_NAME') }}",
                     "logo": {
-                        "@type": "ImageObject",
+                        "@@type": "ImageObject",
                         "url": "{{ env('APP_URL') }}/images/original_logo_bg.png"
                     }
                 }
@@ -188,11 +188,11 @@
         @if($currentSection == 'home')
             <script type="application/ld+json">
                 {
-                    "@context": "https://schema.org",
-                    "@type": "BreadcrumbList",
+                    "@@context": "https://schema.org",
+                    "@@type": "BreadcrumbList",
                     "itemListElement": [
                         {
-                            "@type": "ListItem",
+                            "@@type": "ListItem",
                             "position": 1,
                             "name": "Home",
                             "item": "{{ route('home') }}"
@@ -204,16 +204,16 @@
             <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
-                    "@type": "BreadcrumbList",
+                    "@@type": "BreadcrumbList",
                     "itemListElement": [
                         {
-                            "@type": "ListItem",
+                            "@@type": "ListItem",
                             "position": 1,
                             "name": "Home",
                             "item": "{{ route('home') }}"
                         },
                         {
-                            "@type": "ListItem",
+                            "@@type": "ListItem",
                             "position": 2,
                             "name": "{{ $currentSEO['breadcrumb'] ?? ucfirst($currentSection) }}",
                             "item": "{{ $currentSEO['canonical'] }}"
@@ -239,7 +239,7 @@
                 "email": "{{ env('COMPANY_EMAIL') }}",
                 "telephone": "{{ env('COMPANY_PHONE') }}",
                 "address": {
-                    "@type": "PostalAddress",
+                    "@@type": "PostalAddress",
                     "addressLocality": "Gauteng",
                     "addressCountry": "ZA"
                 },
