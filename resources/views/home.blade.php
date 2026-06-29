@@ -147,7 +147,7 @@
                 "url": "{{ env('APP_URL') }}",
                 "logo": {
                     "@@type":"ImageObject",
-                    "{{ env('APP_URL') }}/images/original_logo_bg.png"
+                    "url": "{{ env('APP_URL') }}/images/original_logo_bg.png"
                 },
                 "description": "{{ env('SITE_DESCRIPTION') }}",
                 "email": "{{ env('COMPANY_EMAIL') }}",
@@ -233,7 +233,7 @@
                 "url": "{{ env('APP_URL') }}",
                 "logo": {
                     "@@type":"ImageObject",
-                    "{{ env('APP_URL') }}/images/original_logo_bg.png"
+                    "url": "{{ env('APP_URL') }}/images/original_logo_bg.png"
                 },
                 "description": "BBBEE Level 1 certified web development and mobile app agency in South Africa.",
                 "email": "{{ env('COMPANY_EMAIL') }}",
